@@ -1,10 +1,12 @@
-import './App.css'
+import { useState } from 'react'
+import Header from './components/Header'
 
 function App() {
+  const [progressPercentage, setProgressPercentage] = useState<number>(0)
 
   return (
     <>
-      <h1>teste</h1>
+      <Header progressPercentagem={progressPercentage}/>
     </>
   )
 }
