@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import Stater from "./pages/Home/Starter";
 import QuizzQuestionsClassic from "./pages/QuizzPages/QuizzQuestionClassic";
+import QuizzQuestionMultiChoice from './pages/QuizzPages/QuizzQuestionMultiChoice';
 
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
@@ -15,9 +15,12 @@ function App() {
 
   return (
     <>
-      {/* <Stater /> */}
       <Header progressPercentage={progressPercentage} />
-      <QuizzQuestionsClassic
+      {/* <QuizzQuestionsClassic
+        currentQuestionNumber={currentQuestionNumber}
+        handleNextQuestion={handleNextQuestion}
+      /> */}
+      <QuizzQuestionMultiChoice
         currentQuestionNumber={currentQuestionNumber}
         handleNextQuestion={handleNextQuestion}
       />
