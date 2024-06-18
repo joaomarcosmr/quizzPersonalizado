@@ -6,7 +6,7 @@ import QuizzQuestionMultiChoice from './pages/QuizzPages/QuizzQuestionMultiChoic
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState<number>(1);
-  const [personalizedQuestions, setPersonalizedQuestions] = useState([]);
+  const [personalizedAnswers, setPersonalizedAnswers] = useState([]);
 
   const handleNextQuestion = () => {
     setProgressPercentage((prev) => prev + 5)
@@ -16,10 +16,10 @@ function App() {
   return (
     <>
       <Header progressPercentage={progressPercentage} />
-      {/* <QuizzQuestionsClassic
+      <QuizzQuestionsClassic
         currentQuestionNumber={currentQuestionNumber}
         handleNextQuestion={handleNextQuestion}
-      /> */}
+      />
       <QuizzQuestionMultiChoice
         currentQuestionNumber={currentQuestionNumber}
         handleNextQuestion={handleNextQuestion}

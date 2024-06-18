@@ -1,18 +1,21 @@
-import React from "react";
+import { useState } from "react";
 import { questionKeto } from "../../services/questionsOptions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
+import { Option, Question } from "../../interface/questions";
 
 type Props = {
   currentQuestionNumber: number;
-  handleNextQuestion: () => void; // Ajustado para função com retorno void
+  handleNextQuestion: () => void;
 };
 
 const QuizzQuestionMultiChoice = ({
   currentQuestionNumber,
   handleNextQuestion,
 }: Props) => {
-  const currentQuestion = questionKeto.find(
+  const [questions, setQuestions] = useState<Question[]>(questionKeto);
+
+  const currentQuestion = questions.find(
     (question) => question.order === currentQuestionNumber
   );
 
@@ -24,7 +27,15 @@ const QuizzQuestionMultiChoice = ({
     );
   }
 
-  const handleCircle = (): void => {};
+  const handleCircle = (option: Option): void => {
+    const updatedQuestions = questions.map((question) => ({
+      ...question,
+      options: question.options.map((opt) =>
+        opt === option ? { ...opt, isChoosed: !opt.isChoosed } : opt
+      ),
+    }));
+    setQuestions(updatedQuestions);
+  };
 
   return (
     <section className="flex flex-col items-center justify-center mt-7 gap-6 w-full h-full">
@@ -34,7 +45,7 @@ const QuizzQuestionMultiChoice = ({
 
       <div
         id="questionsClassic"
-        className="flex flex-col items-center w-full flex-1" // Ajuste para ocupar toda a altura disponível
+        className="flex flex-col items-center w-full flex-1"
       >
         {currentQuestion.options.map((option, index) => (
           <button
@@ -44,29 +55,10 @@ const QuizzQuestionMultiChoice = ({
             text-md font-medium text-left 
             bg-gray-100 rounded-lg hover:bg-gray-100 shadow-lg 
             border-b-4 border-r-4 ${
-              option ? "border-gray-300" : "border-red-400"
+              !option.isChoosed ? "border-gray-300" : "border-red-400"
             }
             hover:border-b-4 hover:border-r-4 hover:border-red-400`}
-            onClick={() => handleCircle()}
-          >
-            {option.image && (
-              <img src={option.image} alt={option.text} className="w-16 h-16" />
-            )}
-            {option.text}
-          </button>
-        ))}
-        {currentQuestion.options.map((option, index) => (
-          <button
-            key={index}
-            id={`optionClassic${index + 1}`}
-            className={`flex items-center w-80 p-2 m-2 h-20 gap-2
-            text-md font-medium text-left 
-            bg-gray-100 rounded-lg hover:bg-gray-100 shadow-lg 
-            border-b-4 border-r-4 ${
-              option ? "border-gray-300" : "border-red-400"
-            }
-            hover:border-b-4 hover:border-r-4 hover:border-red-400`}
-            onClick={() => handleCircle()}
+            onClick={() => handleCircle(option)}
           >
             {option.image && (
               <img src={option.image} alt={option.text} className="w-16 h-16" />
@@ -80,7 +72,7 @@ const QuizzQuestionMultiChoice = ({
           backgroundImage: "linear-gradient(to bottom, transparent, white)",
           position: "sticky",
           bottom: "0px",
-          height: '150px',
+          height: "150px",
         }}
       >
         <button
