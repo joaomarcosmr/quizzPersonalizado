@@ -1,23 +1,14 @@
 import React from "react";
-import { questionKeto } from "../../services/questionsOptions";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
+import { Question } from '../../../interface/questions';
 
 type Props = {
+  currentQuestion: Question
   currentQuestionNumber: number;
   handleNextQuestion: React.Dispatch<React.SetStateAction<void>>;
 };
 
-const QuizzQuestionClassic = ({ currentQuestionNumber, handleNextQuestion }: Props) => {
-  const currentQuestion = questionKeto.find(question => question.order === currentQuestionNumber);
+const QuizzQuestionClassic = ({ handleNextQuestion, currentQuestion }: Props) => {
 
-  if (!currentQuestion) {
-    return (
-      <section className="flex mt-24 justify-center items-center h-96 text-6xl">
-        <FontAwesomeIcon icon={faSpinnerThird} spin className="text-red-400" />
-      </section>
-    );
-  }
 
   return (
     <section className="flex flex-col items-center justify-center mt-7 gap-6 w-full">
@@ -26,7 +17,7 @@ const QuizzQuestionClassic = ({ currentQuestionNumber, handleNextQuestion }: Pro
       </div>
 
       <div id="questionsClassic" className="flex flex-col items-center w-full">
-        {currentQuestion.options.map((option, index) => (
+        {currentQuestion?.options?.map((option, index) => (
           <button
             key={index}
             id={`optionClassic${index + 1}`}

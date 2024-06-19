@@ -1,36 +1,22 @@
 import { useState } from "react";
-import { questionKeto } from "../../services/questionsOptions";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
-import { Option, Question } from "../../interface/questions";
+import { questionKeto } from "../../../services/questionsOptions";
+import { Option, Question } from "../../../interface/questions";
 
 type Props = {
-  currentQuestionNumber: number;
+  currentQuestion: Question;
   handleNextQuestion: () => void;
 };
 
 const QuizzQuestionMultiChoice = ({
-  currentQuestionNumber,
+  currentQuestion,
   handleNextQuestion,
 }: Props) => {
   const [questions, setQuestions] = useState<Question[]>(questionKeto);
 
-  const currentQuestion = questions.find(
-    (question) => question.order === currentQuestionNumber
-  );
-
-  if (!currentQuestion) {
-    return (
-      <section className="flex mt-24 justify-center items-center h-96 text-6xl">
-        <FontAwesomeIcon icon={faSpinnerThird} spin className="text-red-400" />
-      </section>
-    );
-  }
-
   const handleCircle = (option: Option): void => {
     const updatedQuestions = questions.map((question) => ({
       ...question,
-      options: question.options.map((opt) =>
+      options: question?.options?.map((opt) =>
         opt === option ? { ...opt, isChoosed: !opt.isChoosed } : opt
       ),
     }));
@@ -47,7 +33,7 @@ const QuizzQuestionMultiChoice = ({
         id="questionsClassic"
         className="flex flex-col items-center w-full flex-1"
       >
-        {currentQuestion.options.map((option, index) => (
+        {currentQuestion?.options?.map((option, index) => (
           <button
             key={index}
             id={`optionClassic${index + 1}`}

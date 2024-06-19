@@ -51,7 +51,7 @@ export const questionKeto: Question[] = [
   {
     order: 5,
     question: "Question 5",
-    type: "multiChoice",
+    type: "classic",
     options: [
       { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
       { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
@@ -79,15 +79,6 @@ export const questionKeto: Question[] = [
   {
     order: 7,
     question: "Question 7",
-    type: "multiChoice",
-    options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 5" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 6" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 7" },
-    ],
+    type: "info"
   },
 ];
