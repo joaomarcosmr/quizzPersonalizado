@@ -6,20 +6,30 @@ import QuizzInfo from "./pages/QuizzPages/QuizzInfo/QuizzInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
 import { questionKeto } from "./services/questionsOptions";
-import QuizzCalculation from './pages/QuizzPages/QuizzIMC/QuizzCalculations';
+import QuizzCalculation from "./pages/QuizzPages/QuizzIMC/QuizzCalculations";
+import { IAnswers } from "./interface/personalizedAnswers";
+import { Option, Question } from "./interface/questions";
 
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState<number>(1);
-  const [personalizedAnswers, setPersonalizedAnswers] = useState([]);
+  const [personalizedAnswers, setPersonalizedAnswers] = useState<IAnswers[]>([]);
 
-  const currentQuestion = questionKeto.find(
+  const currentQuestion: Question | undefined = questionKeto.find(
     (question) => question.order === currentQuestionNumber
   );
 
-  const handleNextQuestion = () => {
+  const handleNextQuestion = (option?: Option) => {
     setProgressPercentage((prev) => prev + 5);
     setCurrentQuestionNumber((prev) => prev + 1);
+
+    if (currentQuestion?.save && currentQuestion.name && option) {
+      const name = currentQuestion.name as string;
+      setPersonalizedAnswers((prevInfo) => ({
+        ...prevInfo,
+        [name]: option.text,
+      }));
+    }
   };
 
   if (!currentQuestion) {
@@ -63,6 +73,7 @@ function App() {
         <QuizzCalculation
           currentQuestion={currentQuestion}
           handleNextQuestion={handleNextQuestion}
+          setPersonalizedAnswers={setPersonalizedAnswers}
         />
       )}
 

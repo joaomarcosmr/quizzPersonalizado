@@ -1,7 +1,7 @@
 export enum IMCType {
   Info = 'Info',
-  CalculoImc = 'CalculoImc',
-  CalculoMeta = 'CalculoMeta'
+  IMCCalculation = 'CalculoImc',
+  IMCGoal = 'CalculoMeta'
 }
 
 export interface Option {
@@ -19,14 +19,16 @@ export interface Info {
 
 export interface Calculation {
   title: string;
-  measure: string;
+  measure?: string;
   measureDescription?: string;
-  imc: IMCType;
+  imc?: IMCType;
 }
 
 export interface Question {
   order: number;
   type: string;
+  name?: string;
+  save?: boolean;
   question?: string;
   options?: Option[];
   calculation?: Calculation;

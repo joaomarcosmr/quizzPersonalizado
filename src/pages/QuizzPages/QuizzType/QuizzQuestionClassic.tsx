@@ -1,10 +1,10 @@
 import React from "react";
-import { Question } from '../../../interface/questions';
+import { Option, Question } from '../../../interface/questions';
 
 type Props = {
   currentQuestion: Question
   currentQuestionNumber: number;
-  handleNextQuestion: React.Dispatch<React.SetStateAction<void>>;
+  handleNextQuestion: (option?: Option) => void;
 };
 
 const QuizzQuestionClassic = ({ handleNextQuestion, currentQuestion }: Props) => {
@@ -26,7 +26,7 @@ const QuizzQuestionClassic = ({ handleNextQuestion, currentQuestion }: Props) =>
             bg-gray-100 rounded-lg hover:bg-gray-100 shadow-lg 
             border-b-4 border-r-4 border-gray-300
             hover:border-b-4 hover:border-r-4 hover:border-red-400"
-            onClick={() => handleNextQuestion()}
+            onClick={() => handleNextQuestion(option)}
           >
             {option.image && (
               <img src={option.image} alt={option.text} className="w-20 h-20" />

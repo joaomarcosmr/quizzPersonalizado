@@ -1,11 +1,11 @@
 import React from "react";
-import { Question } from "../../../interface/questions";
+import { Option, Question } from "../../../interface/questions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/pro-solid-svg-icons";
 
 type Props = {
   currentQuestion: Question;
-  handleNextQuestion: () => void;
+  handleNextQuestion: (option: Option) => void;
 };
 
 const QuizzInfo = ({ currentQuestion, handleNextQuestion }: Props) => {

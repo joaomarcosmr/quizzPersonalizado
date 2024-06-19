@@ -4,7 +4,7 @@ import { Option, Question } from "../../../interface/questions";
 
 type Props = {
   currentQuestion: Question;
-  handleNextQuestion: () => void;
+  handleNextQuestion: (option?: Option) => void;
 };
 
 const QuizzQuestionMultiChoice = ({

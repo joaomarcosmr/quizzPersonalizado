@@ -4,73 +4,130 @@ export const questionKeto: Question[] = [
   {
     order: 1,
     type: "calculation",
-    calculation: { title: "Qual sua altura?", measure: "cm", measureDescription: "Insira um valor de 90 a 243cm", imc: IMCType.Info},
+    calculation: {
+      title: "Qual sua altura?",
+      measure: "cm",
+      measureDescription: "Insira um valor de 90 a 243cm",
+      imc: IMCType.Info,
+    },
   },
   {
     order: 2,
     type: "calculation",
-    calculation: { title: "Qual seu peso?", measure: "kg", measureDescription: "Insira um valor de 25 a 300kg", imc: IMCType.CalculoImc},
+    calculation: {
+      title: "Qual seu peso?",
+      measure: "kg",
+      measureDescription: "Insira um valor de 25 a 300kg",
+      imc: IMCType.IMCCalculation,
+    },
   },
   {
     order: 3,
     type: "calculation",
-    calculation: { title: "Qual sua meta de peso?", measure: "kg", measureDescription: "Insira um valor de 25 a 300kg", imc: IMCType.CalculoMeta},
+    calculation: {
+      title: "Qual sua meta de peso?",
+      measure: "kg",
+      measureDescription: "Insira um valor de 25 a 300kg",
+      imc: IMCType.IMCGoal,
+    },
   },
   {
     order: 4,
-    question: "Question 3",
+    type: "calculation",
+    calculation: { title: "Qual sua idade?", measure: "anos" },
+  },
+  {
+    order: 5,
+    type: "calculation",
+    calculation: { title: "Qual seu nome?" },
+  },
+  {
+    order: 6,
+    question: "Qual é a sua refeição favorita?",
+    name: 'favoriteFood',
+    save: true,
     type: "classic",
     options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
+      { image: "../src/assets/images/fireEmoji.webp", text: "Pizza" },
+      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Hambúrguer" },
+      { image: "../src/assets/images/strongEmoji.webp", text: "Salada" },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Sushi" },
     ],
   },
   {
     order: 5,
-    question: "Question 4",
+    question: "Quais atividades você gosta de fazer no seu tempo livre?",
     type: "multiChoice",
     options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 5" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 6" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 7" },
-    ],
-  },
-  {
-    order: 5,
-    question: "Question 5",
-    type: "classic",
-    options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 5" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 6" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 7" },
+      { image: "../src/assets/images/fireEmoji.webp", text: "Ler um livro" },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Assistir filmes",
+      },
+      {
+        image: "../src/assets/images/strongEmoji.webp",
+        text: "Praticar esportes",
+      },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Cozinhar" },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Ouvir música",
+      },
+      { image: "../src/assets/images/strongEmoji.webp", text: "Viajar" },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Desenhar" },
     ],
   },
   {
     order: 6,
-    question: "Question 6",
-    type: "multiChoice",
+    question: "Qual é o seu maior sonho?",
+    type: "classic",
     options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 5" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 6" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 7" },
+      {
+        image: "../src/assets/images/heartEmoji.webp",
+        text: "Ser bem-sucedido profissionalmente",
+      },
+      {
+        image: "../src/assets/images/laughEmoji.webp",
+        text: "Viajar pelo mundo",
+      },
+      {
+        image: "../src/assets/images/cryEmoji.webp",
+        text: "Ajudar outras pessoas",
+      },
+      {
+        image: "../src/assets/images/coolEmoji.webp",
+        text: "Viver em harmonia com a natureza",
+      },
     ],
   },
   {
     order: 7,
+    question: "Se você pudesse ter um superpoder, qual seria?",
+    type: "multiChoice",
+    options: [
+      { image: "../src/assets/images/fireEmoji.webp", text: "Voar" },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Invisibilidade",
+      },
+      { image: "../src/assets/images/strongEmoji.webp", text: "Telepatia" },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Super força" },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Curar qualquer doença",
+      },
+      {
+        image: "../src/assets/images/strongEmoji.webp",
+        text: "Manipular o tempo",
+      },
+      {
+        image: "../src/assets/images/appleEmoji.webp",
+        text: "Controlar elementos naturais",
+      },
+    ],
+  },
+  {
+    order: 8,
     type: "info",
     info: [
       {
@@ -83,35 +140,47 @@ export const questionKeto: Question[] = [
     ],
   },
   {
-    order: 8,
-    question: "Question 8",
-    type: "classic",
-    options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 5" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 6" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 7" },
-    ],
-  },
-  {
     order: 9,
-    question: "Question 9",
+    question: "Se você pudesse viver em qualquer lugar do mundo, onde seria?",
     type: "classic",
     options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Option 1" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 2" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 3" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 4" },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Option 5" },
-      { image: "../src/assets/images/strongEmoji.webp", text: "Option 6" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Option 7" },
+      { image: "../src/assets/images/fireEmoji.webp", text: "Paris, França" },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Tóquio, Japão",
+      },
+      {
+        image: "../src/assets/images/strongEmoji.webp",
+        text: "Sydney, Austrália",
+      },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Nova York, EUA" },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Rio de Janeiro, Brasil",
+      },
+      {
+        image: "../src/assets/images/strongEmoji.webp",
+        text: "Cidade do Cabo, África do Sul",
+      },
+      {
+        image: "../src/assets/images/appleEmoji.webp",
+        text: "Barcelona, Espanha",
+      },
     ],
   },
   {
     order: 10,
+    question: "Qual é a sua estação do ano favorita?",
+    type: "classic",
+    options: [
+      { image: "../src/assets/images/fireEmoji.webp", text: "Verão" },
+      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Outono" },
+      { image: "../src/assets/images/strongEmoji.webp", text: "Inverno" },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Primavera" },
+    ],
+  },
+  {
+    order: 11,
     type: "info",
     info: [
       {
