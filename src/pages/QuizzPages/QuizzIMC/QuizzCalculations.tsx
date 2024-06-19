@@ -118,7 +118,7 @@ const QuizzCalculation = ({
           <input
             type="text"
             id="inputForms"
-            className="w-full p-3 pr-16 border-b-2 border-gray-300 focus:outline-none font-bold text-4xl text-center"
+            className="w-full p-3 border-b-2 border-gray-300 focus:outline-none font-bold text-4xl text-center"
             name={
               currentQuestion?.calculation?.imc &&
               currentQuestion?.calculation?.measure !== "anos"
@@ -129,7 +129,7 @@ const QuizzCalculation = ({
             }
             onChange={(e) => handleUserMeasures(e)}
           />
-          <span className="absolute right-4 top-10 transform -translate-y-1/2 font-bold text-2xl text-center">
+          <span className="absolute right-2 top-10 transform -translate-y-1/2 font-bold text-2xl text-center">
             {currentQuestion?.calculation?.measure}
           </span>
         </div>
@@ -169,8 +169,8 @@ const QuizzCalculation = ({
             disabled={!isValidButton()}
             className={`flex items-center justify-center text-md text-left w-80 p-2 m-2 h-20 gap-2 mt-7 bg-red-400 rounded-lg shadow-lg border-b-4 border-r-4 text-white font-bold ${
               isValidButton()
-                ? "hover:bg-red-400 border-red-500 hover:border-red-700"
-                : "opacity-50 cursor-not-allowed"
+              ? "hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700"
+              : "bg-gray-400 cursor-not-allowed border-gray-500 hover:bg-gray-600 "
             }`}
           >
             {isValidButton() ? "Continuar" : "Aguardando Resposta..."}

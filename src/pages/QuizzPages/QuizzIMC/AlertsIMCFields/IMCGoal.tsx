@@ -57,7 +57,9 @@ const IMCGoal = ({
     } else if (weightGoalPercentage >= 15 && weightGoalPercentage < 33) {
       return "Você tem algum trabalho pela frente, mas o resultado será fantástico. Vamos usar seu IMC para criar um programa de perda de peso especialmente para você.";
     } else {
-      return `Essa meta para sua altura pode ser classificado como ${goalStatus === 'Ganhar' ? 'acima do peso' : 'abaixo do peso'} e não é recomendado pela Organização Mundial da Saúde (OMS).`;
+      return `Essa meta para sua altura pode ser classificado como ${
+        goalStatus === "Ganhar" ? "acima do peso" : "abaixo do peso"
+      } e não é recomendado pela Organização Mundial da Saúde (OMS).`;
     }
   };
 

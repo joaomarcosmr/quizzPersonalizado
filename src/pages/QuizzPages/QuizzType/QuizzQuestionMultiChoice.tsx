@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { questionKeto } from "../../../services/questionsOptions";
 import { Option, Question } from "../../../interface/questions";
 
 type Props = {
@@ -11,22 +10,23 @@ const QuizzQuestionMultiChoice = ({
   currentQuestion,
   handleNextQuestion,
 }: Props) => {
-  const [questions, setQuestions] = useState<Question[]>(questionKeto);
+  const [selectedOptions, setSelectedOptions] = useState<Array<Option>>([]);
 
   const handleCircle = (option: Option): void => {
-    const updatedQuestions = questions.map((question) => ({
-      ...question,
-      options: question?.options?.map((opt) =>
-        opt === option ? { ...opt, isChoosed: !opt.isChoosed } : opt
-      ),
-    }));
-    setQuestions(updatedQuestions);
+    const isAlreadySelected = selectedOptions.includes(option);
+    const updatedOptions = isAlreadySelected
+      ? selectedOptions.filter((opt) => opt !== option)
+      : [...selectedOptions, option];
+
+    setSelectedOptions(updatedOptions);
   };
+
+  console.log(selectedOptions);
 
   return (
     <section className="flex flex-col items-center justify-center mt-7 gap-6 w-full h-full">
       <div id="title">
-        <h2 className="text-2xl font-bold">{currentQuestion.question}</h2>
+        <h2 className="text-2xl font-bold text-center">{currentQuestion.question}</h2>
       </div>
 
       <div
@@ -41,7 +41,9 @@ const QuizzQuestionMultiChoice = ({
             text-md font-medium text-left 
             bg-gray-100 rounded-lg hover:bg-gray-100 shadow-lg 
             border-b-4 border-r-4 ${
-              !option.isChoosed ? "border-gray-300" : "border-red-400"
+              !selectedOptions.includes(option)
+                ? "border-gray-300"
+                : "border-red-400"
             }
             hover:border-b-4 hover:border-r-4 hover:border-red-400`}
             onClick={() => handleCircle(option)}
@@ -64,12 +66,17 @@ const QuizzQuestionMultiChoice = ({
         <button
           className={`flex items-center justify-center 
           text-md text-left w-80 p-2 m-2 h-20 gap-2 mt-7
-          bg-red-400 rounded-lg hover:bg-red-400 shadow-lg 
-          border-b-4 border-r-4 border-red-500 text-white font-bold
-          hover:border-b-4 hover:border-r-4 hover:border-red-700`}
+          rounded-lg shadow-lg 
+          border-b-4 border-r-4 text-white font-bold
+          ${
+            selectedOptions.length === 0
+              ? "bg-gray-400 cursor-not-allowed border-gray-500 hover:bg-gray-600 "
+              : "hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700"
+          }`}
           onClick={() => handleNextQuestion()}
+          disabled={selectedOptions.length === 0}
         >
-          Continuar
+          {selectedOptions.length === 0 ? "Selecione uma opção" : "Continuar"}
         </button>
       </div>
     </section>

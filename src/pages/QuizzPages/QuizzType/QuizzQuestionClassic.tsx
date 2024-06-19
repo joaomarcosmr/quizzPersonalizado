@@ -13,7 +13,7 @@ const QuizzQuestionClassic = ({ handleNextQuestion, currentQuestion }: Props) =>
   return (
     <section className="flex flex-col items-center justify-center mt-7 gap-6 w-full">
       <div id="title">
-        <h2 className="text-2xl font-bold">{currentQuestion.question}</h2>
+        <h2 className="text-2xl font-bold  text-center">{currentQuestion.question}</h2>
       </div>
 
       <div id="questionsClassic" className="flex flex-col items-center w-full">
