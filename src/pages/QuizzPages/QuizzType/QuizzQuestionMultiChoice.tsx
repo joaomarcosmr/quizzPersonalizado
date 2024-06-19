@@ -37,7 +37,7 @@ const QuizzQuestionMultiChoice = ({
           <button
             key={index}
             id={`optionClassic${index + 1}`}
-            className={`flex items-center w-80 p-2 m-2 h-20 gap-2
+            className={`flex items-center w-80 p-2 m-2 h-24 gap-2
             text-md font-medium text-left 
             bg-gray-100 rounded-lg hover:bg-gray-100 shadow-lg 
             border-b-4 border-r-4 ${

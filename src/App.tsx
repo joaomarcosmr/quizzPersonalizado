@@ -6,6 +6,7 @@ import QuizzInfo from "./pages/QuizzPages/QuizzInfo/QuizzInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
 import { questionKeto } from "./services/questionsOptions";
+import QuizzCalculation from './pages/QuizzPages/QuizzIMC/QuizzCalculations';
 
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
@@ -53,6 +54,13 @@ function App() {
 
       {currentQuestion.type === "info" && (
         <QuizzInfo
+          currentQuestion={currentQuestion}
+          handleNextQuestion={handleNextQuestion}
+        />
+      )}
+
+      {currentQuestion.type === "calculation" && (
+        <QuizzCalculation
           currentQuestion={currentQuestion}
           handleNextQuestion={handleNextQuestion}
         />
