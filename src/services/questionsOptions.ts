@@ -9,7 +9,10 @@ export const questionKeto: Question[] = [
       { image: "../src/assets/images/fireEmoji.webp", text: "Lose Weight" },
       { image: "../src/assets/images/hangLoseEmoji.webp", text: "Get Fitter" },
       { image: "../src/assets/images/strongEmoji.webp", text: "Gain Muscle" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Develop Healthy Habits" },
+      {
+        image: "../src/assets/images/appleEmoji.webp",
+        text: "Develop Healthy Habits",
+      },
     ],
   },
   {
@@ -20,7 +23,10 @@ export const questionKeto: Question[] = [
       { image: "../src/assets/images/fireEmoji.webp", text: "Lose Weight" },
       { image: "../src/assets/images/hangLoseEmoji.webp", text: "Get Fitter" },
       { image: "../src/assets/images/strongEmoji.webp", text: "Gain Muscle" },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Develop Healthy Habits" },
+      {
+        image: "../src/assets/images/appleEmoji.webp",
+        text: "Develop Healthy Habits",
+      },
     ],
   },
   {
@@ -79,6 +85,15 @@ export const questionKeto: Question[] = [
   {
     order: 7,
     question: "Question 7",
-    type: "info"
+    type: "info",
+    info: [
+      {
+        image: "../src/assets/images/woman/results/eqedwf4ar9ec26prkdfa.webp",
+        title:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt",
+        description1:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt quae omnis placeat ut quisquam provident ame.",
+      },
+    ],
   },
 ];

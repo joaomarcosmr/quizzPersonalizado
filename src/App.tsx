@@ -31,9 +31,10 @@ function App() {
 
   return (
     <>
-      {currentQuestion.type !== 'info' && currentQuestion.type !== 'landingPage' && (
-        <Header progressPercentage={progressPercentage} />
-      )}
+      {currentQuestion.type !== "info" &&
+        currentQuestion.type !== "landingPage" && (
+          <Header progressPercentage={progressPercentage} />
+        )}
 
       {currentQuestion.type === "classic" && (
         <QuizzQuestionClassic
@@ -51,7 +52,10 @@ function App() {
       )}
 
       {currentQuestion.type === "info" && (
-        <QuizzInfo currentQuestion={currentQuestion} />
+        <QuizzInfo
+          currentQuestion={currentQuestion}
+          handleNextQuestion={handleNextQuestion}
+        />
       )}
 
       {currentQuestion.type === "results-analysis" && (

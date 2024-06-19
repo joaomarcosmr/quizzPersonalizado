@@ -14,7 +14,7 @@ export interface Info {
 export interface Question {
   order: number;
   type: string;
-  question: string;
+  question?: string;
   options?: Option[];
   info?: Info[];
 }
