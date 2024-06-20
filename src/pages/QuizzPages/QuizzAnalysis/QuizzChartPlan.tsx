@@ -1,95 +1,74 @@
-import { useEffect, useRef } from "react";
-import { Line } from "react-chartjs-2";
 import "chart.js/auto";
-import { Option, Question } from "../../../interface/questions";
+import { Option } from "../../../interface/questions";
+import { IAnswers } from "../../../interface/personalizedAnswers";
+import ChartComponent from "../../../components/ChartResults";
+import { useEffect } from "react";
 
 type Props = {
-  currentQuestion: Question;
+  personalizedAnswers: IAnswers;
   handleNextQuestion: (option?: Option[]) => void;
 };
 
-const QuizzChartPlan = ({ currentQuestion, handleNextQuestion }: Props) => {
-  const data = {
-    labels: ["Junho", "Julho", "Agosto", "Setembro"],
-    datasets: [
-      {
-        label: "Seu Progresso",
-        data: [70, 28, 15, 1],
-        borderWidth: 8,
-        pointBackgroundColor: "rgba(211, 211, 211, 1.0)",
-        pointBorderColor: "rgba(211, 211, 211, 1.0)",
-        fill: true,
-        tension: 0.2,
-        backgroundColor: (context) => {
-          const chart = context.chart;
-          const gradient = chart.ctx.createLinearGradient(0, 0, chart.width, 0);
-          gradient.addColorStop(0, "rgba(255,0,0,0.5)");
-          gradient.addColorStop(0.5, "rgba(255,165,0,0.5)");
-          gradient.addColorStop(1, "rgba(0,128,0,0.5)");
-          return gradient;
-        },
-        borderColor: (context) => {
-          const chart = context.chart;
-          const gradient = chart.ctx.createLinearGradient(0, 0, chart.width, 0);
-          gradient.addColorStop(0, "rgba(255,0,0,1)");
-          gradient.addColorStop(0.5, "rgba(255,165,0,1)");
-          gradient.addColorStop(1, "rgba(0,128,0,1)");
-          return gradient;
-        },
-      },
-    ],
-  };
+const QuizzChartPlan = ({ personalizedAnswers, handleNextQuestion }: Props) => {
+  const currentDate = new Date();
 
-  const options = {
-    scales: {
-      x: {
-        beginAtZero: true,
-      },
-      y: {
-        display: false,
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        enabled: false,
-      },
-    },
-  };
+  const months = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ];
+
+  const currentMonthName = months[currentDate.getMonth()];
+
+  const calcWeightDifference = personalizedAnswers.weight - personalizedAnswers.targetWeight
+  
+  let weightDifferenceToLose = false;
+  let weightDifferenceToGain = false;
+
+  calcWeightDifference > 0 ? weightDifferenceToLose = true : weightDifferenceToGain = true
+  
+  let howManyMonthsNeedToAchieve;
+
+  useEffect(() => {
+    if(calcWeightDifference < 10){
+      howManyMonthsNeedToAchieve = 3
+    } else if (calcWeightDifference >= 10 && calcWeightDifference < 20){
+      howManyMonthsNeedToAchieve = 4
+    } else {
+      howManyMonthsNeedToAchieve = 6
+    }
+  }, []);
 
   return (
-    <section className="flex flex-col items-center justify-center mt-7 w-96 h-full">
+    <section className="flex flex-col items-center justify-center mt-7 w-96 h-full relative">
       <div
         id="title"
         className="w-86 flex flex-col justify-center items-center gap-4"
       >
-        <h2 className="text-2xl font-bold text-center">
-          O último plano que você vai precisar para queimar todas as gorduras!
+        <h2 className="text-2xl w-80 font-bold text-center">
+          <span className="text-red-700">{personalizedAnswers.name}</span>, aqui
+          está nossa previsão pra você queimar gorduras!
         </h2>
         <span className="text-sm">
-          Nós estimamos que seus resultados serão em:
+          Nós estimamos que seu objetivo será alcançado em:
         </span>
         <p className="text-lg text-red-700 font-bold">
-          76 Kg em Setembro de 2024
+          {`${personalizedAnswers.targetWeight} Kg em Setembro de 2024`}
         </p>
       </div>
 
-      <div className="w-96">
-        <Line data={data} options={options} className="left mt-4 relative" />
-      </div>
+      <ChartComponent personalizedAnswers={personalizedAnswers} />
 
-      <div
-        className={`absolute top-[20.6rem] right-[-0.3rem] transform flex flex-col items-center transition-all duration-1000`}
-      >
-        <div className={`bg-gray-700 text-white text-xs rounded py-1 px-2`}>
-          Você aqui <br /> com 76 Kg
-        </div>
-        <div className="w-4 h-4 bg-white border-2 border-gray-400 rounded-full mt-1"></div>
-      </div>
-
-      <span className="text-xs font-medium text-gray-400 w-80 text-center">
+      <span className="text-xs mt-4 font-medium text-gray-400 w-80 text-center">
         *Com base nos dados dos usuários que registram seu progresso no
         aplicativo. Consulte primeiro seu médico. O gráfico é uma ilustração não
         personalizada e os resultados podem variar.
@@ -104,7 +83,7 @@ const QuizzChartPlan = ({ currentQuestion, handleNextQuestion }: Props) => {
         }}
       >
         <button
-          className={`flex items-center justify-center text-md text-left w-80 p-2 m-2 h-20 gap-2 mt-7 rounded-lg shadow-lg border-b-4 border-r-4 text-white font-bold hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700`}
+          className="flex items-center justify-center text-md text-left w-80 p-2 m-2 h-20 gap-2 mt-7 rounded-lg shadow-lg border-b-4 border-r-4 text-white font-bold hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700"
           onClick={() => handleNextQuestion()}
         >
           Continuar

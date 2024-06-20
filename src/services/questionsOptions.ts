@@ -3,6 +3,46 @@ import { IMCType, Question } from "../interface/questions";
 export const questionKeto: Question[] = [
   {
     order: 1,
+    type: "calculation",
+    calculation: {
+      title: "Qual sua altura?",
+      measure: "cm",
+      measureDescription: "Insira um valor de 90 a 243cm",
+      imc: IMCType.Info,
+    },
+  },
+  {
+    order: 2,
+    type: "calculation",
+    calculation: {
+      title: "Qual seu peso?",
+      measure: "kg",
+      measureDescription: "Insira um valor de 25 a 300kg",
+      imc: IMCType.IMCCalculation,
+    },
+  },
+  {
+    order: 3,
+    type: "calculation",
+    calculation: {
+      title: "Qual sua meta de peso?",
+      measure: "kg",
+      measureDescription: "Insira um valor de 25 a 300kg",
+      imc: IMCType.IMCGoal,
+    },
+  },
+  {
+    order: 4,
+    type: "calculation",
+    calculation: { title: "Qual sua idade?", measure: "anos" },
+  },
+  {
+    order: 5,
+    type: "calculation",
+    calculation: { title: "Qual seu nome?" },
+  },
+    {
+    order: 6,
     type: "results-chart-promises",
     calculation: {
       title: "Qual sua altura?",
@@ -10,47 +50,7 @@ export const questionKeto: Question[] = [
       measureDescription: "Insira um valor de 90 a 243cm",
       imc: IMCType.Info,
     },
-  }
-  // {
-  //   order: 1,
-  //   type: "calculation",
-  //   calculation: {
-  //     title: "Qual sua altura?",
-  //     measure: "cm",
-  //     measureDescription: "Insira um valor de 90 a 243cm",
-  //     imc: IMCType.Info,
-  //   },
-  // },
-  // {
-  //   order: 2,
-  //   type: "calculation",
-  //   calculation: {
-  //     title: "Qual seu peso?",
-  //     measure: "kg",
-  //     measureDescription: "Insira um valor de 25 a 300kg",
-  //     imc: IMCType.IMCCalculation,
-  //   },
-  // },
-  // {
-  //   order: 3,
-  //   type: "calculation",
-  //   calculation: {
-  //     title: "Qual sua meta de peso?",
-  //     measure: "kg",
-  //     measureDescription: "Insira um valor de 25 a 300kg",
-  //     imc: IMCType.IMCGoal,
-  //   },
-  // },
-  // {
-  //   order: 4,
-  //   type: "calculation",
-  //   calculation: { title: "Qual sua idade?", measure: "anos" },
-  // },
-  // {
-  //   order: 5,
-  //   type: "calculation",
-  //   calculation: { title: "Qual seu nome?" },
-  // },
+  },
   // {
   //   order: 6,
   //   question: "Qual é a sua refeição favorita?",

@@ -1,5 +1,11 @@
+import { IMCType } from './questions';
+
 export interface IAnswers {
-  order: number;
-  type: string;
-  question?: string
+  IMC: IMCType;
+  age: number;
+  goalWeight: string;
+  height: number;
+  name: string;
+  targetWeight: number;
+  weight: number;
 }

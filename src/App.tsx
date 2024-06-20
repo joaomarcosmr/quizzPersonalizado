@@ -92,7 +92,7 @@ function App() {
 
       {currentQuestion.type === "results-chart-promises" && (
         <QuizzChartPlan
-          currentQuestion={currentQuestion}
+          personalizedAnswers={personalizedAnswers}
           handleNextQuestion={handleNextQuestion}
         />
       )}
