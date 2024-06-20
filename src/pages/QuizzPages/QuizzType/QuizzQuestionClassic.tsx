@@ -1,4 +1,3 @@
-import React from "react";
 import { Option, Question } from '../../../interface/questions';
 
 type Props = {

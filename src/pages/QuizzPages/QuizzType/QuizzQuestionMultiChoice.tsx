@@ -3,7 +3,7 @@ import { Option, Question } from "../../../interface/questions";
 
 type Props = {
   currentQuestion: Question;
-  handleNextQuestion: (option?: Option) => void;
+  handleNextQuestion: (option?: Option[]) => void;
 };
 
 const QuizzQuestionMultiChoice = ({
@@ -20,8 +20,6 @@ const QuizzQuestionMultiChoice = ({
 
     setSelectedOptions(updatedOptions);
   };
-
-  console.log(selectedOptions);
 
   return (
     <section className="flex flex-col items-center justify-center mt-7 gap-6 w-full h-full">
@@ -73,7 +71,7 @@ const QuizzQuestionMultiChoice = ({
               ? "bg-gray-400 cursor-not-allowed border-gray-500 hover:bg-gray-600 "
               : "hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700"
           }`}
-          onClick={() => handleNextQuestion()}
+          onClick={() => handleNextQuestion(selectedOptions)}
           disabled={selectedOptions.length === 0}
         >
           {selectedOptions.length === 0 ? "Selecione uma opção" : "Continuar"}

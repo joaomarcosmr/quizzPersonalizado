@@ -9,6 +9,8 @@ import { questionKeto } from "./services/questionsOptions";
 import QuizzCalculation from "./pages/QuizzPages/QuizzIMC/QuizzCalculations";
 import { IAnswers } from "./interface/personalizedAnswers";
 import { Option, Question } from "./interface/questions";
+import QuizzResultsAnalysis from './pages/QuizzPages/QuizzAnalysis/QuizzResultsAnalysis';
+import QuizzChartPlan from './pages/QuizzPages/QuizzAnalysis/QuizzChartPlan';
 
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
@@ -19,7 +21,7 @@ function App() {
     (question) => question.order === currentQuestionNumber
   );
 
-  const handleNextQuestion = (option?: Option) => {
+  const handleNextQuestion = (option?: Option | Option[]) => {
     setProgressPercentage((prev) => prev + 5);
     setCurrentQuestionNumber((prev) => prev + 1);
 
@@ -27,7 +29,7 @@ function App() {
       const name = currentQuestion.name as string;
       setPersonalizedAnswers((prevInfo) => ({
         ...prevInfo,
-        [name]: option.text,
+        [name]: Array.isArray(option) ? option : option.text,
       }));
     }
   };
@@ -40,10 +42,14 @@ function App() {
     );
   }
 
+  console.log(personalizedAnswers)
+
   return (
     <>
       {currentQuestion.type !== "info" &&
-        currentQuestion.type !== "landingPage" && (
+        currentQuestion.type !== "landingPage" && 
+          currentQuestion.type !== "results-analysis" &&
+            currentQuestion.type !== "results-chart-promises" && (
           <Header progressPercentage={progressPercentage} />
         )}
 
@@ -78,14 +84,14 @@ function App() {
       )}
 
       {currentQuestion.type === "results-analysis" && (
-        <QuizzQuestionMultiChoice
+        <QuizzResultsAnalysis
           currentQuestion={currentQuestion}
           handleNextQuestion={handleNextQuestion}
         />
       )}
 
-      {currentQuestion.type === "results-promises" && (
-        <QuizzQuestionMultiChoice
+      {currentQuestion.type === "results-chart-promises" && (
+        <QuizzChartPlan
           currentQuestion={currentQuestion}
           handleNextQuestion={handleNextQuestion}
         />
