@@ -24,7 +24,7 @@ const QuizzQuestionMultiChoice = ({
   return (
     <section className="flex flex-col items-center justify-center mt-7 gap-6 w-full h-full">
       <div id="title">
-        <h2 className="text-2xl font-bold text-center">{currentQuestion.question}</h2>
+        <h2 className="text-xl font-bold text-center w-96">{currentQuestion.question}</h2>
       </div>
 
       <div

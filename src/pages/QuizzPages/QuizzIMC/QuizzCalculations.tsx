@@ -3,7 +3,8 @@ import { FormEvent, useState } from "react";
 import IMCCalculation from "./AlertsIMCFields/IMCCalculation";
 import IMCGoal from "./AlertsIMCFields/IMCGoal";
 import IMCInfo from "./AlertsIMCFields/IMCInfo";
-import { IAnswers } from "../../../interface/personalizedAnswers";
+import { IBodyImage } from '../../../interface/bodyImage';
+import { IAnswers } from '../../../interface/personalizedAnswers';
 
 type Props = {
   currentQuestion: Question;
@@ -24,6 +25,7 @@ const QuizzCalculation = ({
   const [goalStatus, setGoalStatus] = useState<string>("");
   const [targetWeightIsValidPercentage, setTargetWeightIsValidPercentage] =
     useState<boolean>(false);
+  const [bodyImage, setBodyImage] = useState<IBodyImage | null>(null);
 
   const heightIsValid = height >= 0.9 && height <= 2.43;
   const weightIsValid = weight >= 25 && weight <= 300;
@@ -100,6 +102,7 @@ const QuizzCalculation = ({
       targetWeight: targetWeight,
       goalWeight: goalStatus === "Ganhar" ? "Ganhar peso" : "Perder peso",
       IMC: IMC,
+      bodyImage: bodyImage
     }));
 
     handleNextQuestion();
@@ -141,7 +144,7 @@ const QuizzCalculation = ({
           heightIsValid && <IMCInfo />}
 
         {currentQuestion?.calculation?.imc === IMCType.IMCCalculation &&
-          weightIsValid && <IMCCalculation IMC={IMC} />}
+          weightIsValid && <IMCCalculation IMC={IMC} setBodyImage={setBodyImage} />}
 
         {currentQuestion?.calculation?.imc === IMCType.IMCGoal &&
           targetWeightIsValid && (
@@ -167,11 +170,15 @@ const QuizzCalculation = ({
           <button
             onClick={() => handleContinue()}
             disabled={!isValidButton()}
-            className={`flex items-center justify-center text-md text-left w-80 p-2 m-2 h-20 gap-2 mt-7 bg-red-400 rounded-lg shadow-lg border-b-4 border-r-4 text-white font-bold ${
-              isValidButton()
-              ? "hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700"
-              : "bg-gray-400 cursor-not-allowed border-gray-500 hover:bg-gray-600 "
-            }`}
+            className={`flex items-center justify-center 
+              text-md text-left w-80 p-2 m-2 h-20 gap-2 mt-7
+              rounded-lg shadow-lg 
+              border-b-4 border-r-4 text-white font-bold
+              ${
+                isValidButton()
+                  ? "hover:bg-red-400 bg-red-400 border-red-500 hover:border-red-700"
+                  : "bg-gray-400 cursor-not-allowed border-gray-500 hover:bg-gray-600" 
+              }`}
           >
             {isValidButton() ? "Continuar" : "Aguardando Resposta..."}
           </button>

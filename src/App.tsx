@@ -9,13 +9,16 @@ import { questionKeto } from "./services/questionsOptions";
 import QuizzCalculation from "./pages/QuizzPages/QuizzIMC/QuizzCalculations";
 import { IAnswers } from "./interface/personalizedAnswers";
 import { Option, Question } from "./interface/questions";
-import QuizzResultsAnalysis from './pages/QuizzPages/QuizzAnalysis/QuizzResultsAnalysis';
-import QuizzChartPlan from './pages/QuizzPages/QuizzAnalysis/QuizzChartPlan';
+import QuizzResultsAnalysis from "./pages/QuizzPages/QuizzAnalysis/QuizzResultsAnalysis";
+import QuizzChartPlan from "./pages/QuizzPages/QuizzAnalysis/QuizzChartPlan";
+import QuizzGenerating from "./pages/QuizzPages/QuizzGenerating/QuizzGenerating";
 
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState<number>(1);
-  const [personalizedAnswers, setPersonalizedAnswers] = useState<IAnswers[]>([]);
+  const [personalizedAnswers, setPersonalizedAnswers] = useState<IAnswers[]>(
+    []
+  );
 
   const currentQuestion: Question | undefined = questionKeto.find(
     (question) => question.order === currentQuestionNumber
@@ -42,14 +45,15 @@ function App() {
     );
   }
 
-  console.log(personalizedAnswers)
+  console.log(personalizedAnswers);
 
   return (
     <>
       {currentQuestion.type !== "info" &&
-        currentQuestion.type !== "landingPage" && 
-          currentQuestion.type !== "results-analysis" &&
-            currentQuestion.type !== "results-chart-promises" && (
+        currentQuestion.type !== "landingPage" &&
+        currentQuestion.type !== "results-analysis" &&
+        currentQuestion.type !== "results-chart-promises" &&
+        currentQuestion.type !== "awaiting" && (
           <Header progressPercentage={progressPercentage} />
         )}
 
@@ -85,7 +89,7 @@ function App() {
 
       {currentQuestion.type === "results-analysis" && (
         <QuizzResultsAnalysis
-          currentQuestion={currentQuestion}
+          personalizedAnswers={personalizedAnswers}
           handleNextQuestion={handleNextQuestion}
         />
       )}
@@ -98,8 +102,7 @@ function App() {
       )}
 
       {currentQuestion.type === "awaiting" && (
-        <QuizzQuestionMultiChoice
-          currentQuestion={currentQuestion}
+        <QuizzGenerating
           handleNextQuestion={handleNextQuestion}
         />
       )}

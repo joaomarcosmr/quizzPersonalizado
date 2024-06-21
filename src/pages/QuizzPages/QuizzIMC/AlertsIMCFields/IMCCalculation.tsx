@@ -1,25 +1,47 @@
 import { faWeight } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { IBodyImage } from '../../../../interface/bodyImage';
 
 type Props = {
   IMC: number;
+  setBodyImage: React.Dispatch<React.SetStateAction<IBodyImage | null>>;
 };
 
-const IMCCalculation = ({ IMC }: Props) => {
+const IMCCalculation = ({ IMC, setBodyImage }: Props) => {
   const [status, setStatus] = useState<string>("");
 
   useEffect(() => {
     if (IMC < 18.5) {
       setStatus("MAGREZA");
+      setBodyImage({
+        image: "../../../src/assets/images/woman/results/magra.webp",
+        alt: "magra"
+      })
     } else if (IMC >= 18.5 && IMC < 25) {
       setStatus("NORMAL");
+      setBodyImage({
+        image: "../../../src/assets/images/woman/results/normal.webp",
+        alt: "normal"
+      })
     } else if (IMC >= 25 && IMC < 30) {
       setStatus("SOBREPESO");
+      setBodyImage({
+        image: "../../../src/assets/images/woman/results/sobrepeso.webp",
+        alt: "sobrepeso"
+      })
     } else if (IMC >= 30 && IMC < 40) {
       setStatus("OBESIDADE");
+      setBodyImage({
+        image: "../../../src/assets/images/woman/results/obesa.webp",
+        alt: "obesa"
+      })
     } else {
       setStatus("OBESIDADE GRAVE");
+      setBodyImage({
+        image: "../../../src/assets/images/woman/results/obesa.webp",
+        alt: "obesa"
+      })
     }
   }, [IMC]);
 
@@ -35,6 +57,8 @@ const IMCCalculation = ({ IMC }: Props) => {
         return "bg-red-200";
       case "OBESIDADE GRAVE":
         return "bg-red-300";
+      default:
+        return "";
     }
   };
 
@@ -50,6 +74,8 @@ const IMCCalculation = ({ IMC }: Props) => {
         return "Você pode ganhar muito ao perder um pouco de peso. Vamos usar seu IMC para criar o programa de perda de peso personalizado pra o que você precisa.";
       case "OBESIDADE GRAVE":
         return "Você está numa situação delicada. Vamos usar seu IMC para criar o programa de perda de peso para resolver isso!.";
+      default:
+        return "";
     }
   };
 
