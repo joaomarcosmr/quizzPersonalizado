@@ -3,32 +3,44 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { Chart, ScriptableContext } from "chart.js";
 import { IAnswers } from "../interface/personalizedAnswers";
+import { months } from "../utils/months";
 
 interface ChartProps {
   personalizedAnswers: IAnswers;
+  howManyMonthsNeedToAchieve: number | undefined;
+  weightDifferenceToGain: boolean;
 }
 
-const ChartComponent: React.FC<ChartProps> = ({ personalizedAnswers }) => {
+const ChartComponent: React.FC<ChartProps> = ({
+  personalizedAnswers,
+  howManyMonthsNeedToAchieve,
+  weightDifferenceToGain,
+}) => {
+  const currentDate = new Date();
+  const currentMonthIndex = currentDate.getMonth();
 
-  const progress =
-    personalizedAnswers.goalWeight === "Perder peso"
-      ? [
-          personalizedAnswers.weight -
-            (personalizedAnswers.weight / 100) * 0.25,
-          personalizedAnswers.weight - (personalizedAnswers.weight / 100) * 7,
-          personalizedAnswers.weight - (personalizedAnswers.weight / 100) * 10,
-          personalizedAnswers.targetWeight,
-        ]
-      : [
-          personalizedAnswers.weight +
-            (personalizedAnswers.weight / 100) * 0.25,
-          personalizedAnswers.weight + (personalizedAnswers.weight / 100) * 7,
-          personalizedAnswers.weight + (personalizedAnswers.weight / 100) * 10,
-          personalizedAnswers.targetWeight,
-        ];
+  const monthsToGoal = [];
+  for (let i = 0; i <= howManyMonthsNeedToAchieve!; i++) {
+    monthsToGoal.push(months[(currentMonthIndex + i) % 12]);
+  }
+
+  const initialWeight = personalizedAnswers.weight;
+  const targetWeight = personalizedAnswers.targetWeight;
+  const totalMonths = howManyMonthsNeedToAchieve;
+
+  const progress = [];
+  for (let i = 0; i < totalMonths!; i++) {
+    const weightAtMonth =
+      personalizedAnswers.goalWeight === "Perder peso"
+        ? initialWeight - (initialWeight / 100) * (i === 1 ? i * 5 : i * 4)
+        : initialWeight + (initialWeight / 100) * (i === 1 ? i * 5 : i * 4);
+
+    progress.push(weightAtMonth);
+  }
+  progress.push(targetWeight);
 
   const data = {
-    labels: ["Junho", "Julho", "Agosto", "Setembro"],
+    labels: monthsToGoal,
     datasets: [
       {
         data: progress,
@@ -68,7 +80,9 @@ const ChartComponent: React.FC<ChartProps> = ({ personalizedAnswers }) => {
         title: {
           display: true,
         },
-        min: personalizedAnswers.targetWeight,
+        min: weightDifferenceToGain
+          ? personalizedAnswers.targetWeight + 4
+          : personalizedAnswers.targetWeight,
         max: personalizedAnswers.weight,
         ticks: {
           stepSize: 5,

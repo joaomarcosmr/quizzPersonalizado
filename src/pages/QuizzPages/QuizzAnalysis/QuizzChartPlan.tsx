@@ -2,7 +2,8 @@ import "chart.js/auto";
 import { Option } from "../../../interface/questions";
 import { IAnswers } from "../../../interface/personalizedAnswers";
 import ChartComponent from "../../../components/ChartResults";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { months } from "../../../utils/months";
 
 type Props = {
   personalizedAnswers: IAnswers;
@@ -10,43 +11,62 @@ type Props = {
 };
 
 const QuizzChartPlan = ({ personalizedAnswers, handleNextQuestion }: Props) => {
+  const [goalMonthAchieved, setGoalMonthAchieved] = useState("");
+  const [howManyMonthsNeedToAchieve, setHowManyMonthsNeedToAchieve] =
+    useState(0);
+
   const currentDate = new Date();
 
-  const months = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
-  ];
+  let calcWeightDifference =
+    personalizedAnswers.weight - personalizedAnswers.targetWeight;
 
-  const currentMonthName = months[currentDate.getMonth()];
-
-  const calcWeightDifference = personalizedAnswers.weight - personalizedAnswers.targetWeight
-  
   let weightDifferenceToLose = false;
   let weightDifferenceToGain = false;
 
-  calcWeightDifference > 0 ? weightDifferenceToLose = true : weightDifferenceToGain = true
-  
-  let howManyMonthsNeedToAchieve;
+  calcWeightDifference > 0
+    ? (weightDifferenceToLose = true)
+    : (weightDifferenceToGain = true);
 
   useEffect(() => {
-    if(calcWeightDifference < 10){
-      howManyMonthsNeedToAchieve = 3
-    } else if (calcWeightDifference >= 10 && calcWeightDifference < 20){
-      howManyMonthsNeedToAchieve = 4
+    let monthsToAchieve = 0;
+
+    if (calcWeightDifference < 5 && weightDifferenceToLose) {
+      monthsToAchieve = 1;
+    } else if (calcWeightDifference >= 5 && calcWeightDifference < 10) {
+      monthsToAchieve = 2;
+    } else if (calcWeightDifference >= 10 && calcWeightDifference < 15) {
+      monthsToAchieve = 3;
+    } else if (calcWeightDifference >= 15 && calcWeightDifference < 20) {
+      monthsToAchieve = 4;
+    } else if (calcWeightDifference >= 20 && calcWeightDifference < 25) {
+      monthsToAchieve = 5;
+    } else if (calcWeightDifference >= 25){
+      monthsToAchieve = 6;
     } else {
-      howManyMonthsNeedToAchieve = 6
+      calcWeightDifference *= -1
     }
-  }, []);
+
+    if (calcWeightDifference < 5 && weightDifferenceToGain) {
+      monthsToAchieve = 1;
+    } else if (calcWeightDifference >= 5 && calcWeightDifference < 10) {
+      monthsToAchieve = 2;
+    } else if (calcWeightDifference >= 10 && calcWeightDifference < 15) {
+      monthsToAchieve = 3;
+    } else if (calcWeightDifference >= 15 && calcWeightDifference < 20) {
+      monthsToAchieve = 4;
+    } else if (calcWeightDifference >= 20 && calcWeightDifference < 25) {
+      monthsToAchieve = 5;
+    } else if (calcWeightDifference >= 25){
+      monthsToAchieve = 6;
+    } else {
+      calcWeightDifference *= -1
+    }
+
+    setHowManyMonthsNeedToAchieve(monthsToAchieve);
+    setGoalMonthAchieved(
+      months[(currentDate.getMonth() + monthsToAchieve) % 12]
+    );
+  }, [calcWeightDifference, currentDate]);
 
   return (
     <section className="flex flex-col items-center justify-center mt-7 w-96 h-full relative">
@@ -56,17 +76,21 @@ const QuizzChartPlan = ({ personalizedAnswers, handleNextQuestion }: Props) => {
       >
         <h2 className="text-2xl w-80 font-bold text-center">
           <span className="text-red-700">{personalizedAnswers.name}</span>, aqui
-          está nossa previsão pra você queimar gorduras!
+          está nossa previsão {personalizedAnswers.goalWeight === 'Ganhar peso' ? "pra você ganhar músculos!" : "pra você queimar gorduras!"}
         </h2>
-        <span className="text-sm">
-          Nós estimamos que seu objetivo será alcançado em:
+        <span className="text-sm text-center">
+          Nós estimamos que seu objetivo com <br/>  esse plano personalizado será alcançado em:
         </span>
         <p className="text-lg text-red-700 font-bold">
-          {`${personalizedAnswers.targetWeight} Kg em Setembro de 2024`}
+          {`${personalizedAnswers.targetWeight} Kg em ${goalMonthAchieved} de 2024`}
         </p>
       </div>
 
-      <ChartComponent personalizedAnswers={personalizedAnswers} />
+      <ChartComponent
+        personalizedAnswers={personalizedAnswers}
+        howManyMonthsNeedToAchieve={howManyMonthsNeedToAchieve}
+        weightDifferenceToGain={weightDifferenceToGain}
+      />
 
       <span className="text-xs mt-4 font-medium text-gray-400 w-80 text-center">
         *Com base nos dados dos usuários que registram seu progresso no
