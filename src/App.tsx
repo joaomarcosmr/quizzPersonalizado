@@ -12,6 +12,8 @@ import { Option, Question } from "./interface/questions";
 import QuizzResultsAnalysis from "./pages/QuizzPages/QuizzAnalysis/QuizzResultsAnalysis";
 import QuizzChartPlan from "./pages/QuizzPages/QuizzAnalysis/QuizzChartPlan";
 import QuizzGenerating from "./pages/QuizzPages/QuizzGenerating/QuizzGenerating";
+import QuizzStart from "./pages/QuizzStart/QuizzStart";
+import QuizzLandingPage from "./pages/QuizzPages/QuizzLandingPage/QuizzLandingPage";
 
 function App() {
   const [progressPercentage, setProgressPercentage] = useState<number>(5);
@@ -45,17 +47,23 @@ function App() {
     );
   }
 
-  console.log(personalizedAnswers);
-
   return (
     <>
       {currentQuestion.type !== "info" &&
         currentQuestion.type !== "landingPage" &&
         currentQuestion.type !== "results-analysis" &&
         currentQuestion.type !== "results-chart-promises" &&
-        currentQuestion.type !== "awaiting" && (
+        currentQuestion.type !== "awaiting" &&
+        currentQuestion.type !== "start" && (
           <Header progressPercentage={progressPercentage} />
         )}
+
+      {currentQuestion.type === "start" && (
+        <QuizzStart
+          currentQuestion={currentQuestion}
+          handleNextQuestion={handleNextQuestion}
+        />
+      )}
 
       {currentQuestion.type === "classic" && (
         <QuizzQuestionClassic
@@ -102,17 +110,10 @@ function App() {
       )}
 
       {currentQuestion.type === "awaiting" && (
-        <QuizzGenerating
-          handleNextQuestion={handleNextQuestion}
-        />
+        <QuizzGenerating handleNextQuestion={handleNextQuestion} />
       )}
 
-      {currentQuestion.type === "landingPage" && (
-        <QuizzQuestionMultiChoice
-          currentQuestion={currentQuestion}
-          handleNextQuestion={handleNextQuestion}
-        />
-      )}
+      {currentQuestion.type === "landingPage" && <QuizzLandingPage />}
     </>
   );
 }
