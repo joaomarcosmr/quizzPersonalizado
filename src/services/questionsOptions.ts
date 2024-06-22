@@ -11,24 +11,6 @@ export const questionKeto: Question[] = [
     order: 1,
     question: "Seu plano personalizado em 1 minuto",
     type: "landingPage",
-    options: [
-      {
-        image: "../src/assets/images/woman/1829.webp",
-        text: "18 a 24",
-      },
-      {
-        image: "../src/assets/images/woman/3039.webp",
-        text: "25 a 34",
-      },
-      {
-        image: "../src/assets/images/woman/4049.webp",
-        text: "35 a 44",
-      },
-      {
-        image: "../src/assets/images/woman/50+.webp",
-        text: "45+",
-      },
-    ],
   },
   {
     order: 1,
