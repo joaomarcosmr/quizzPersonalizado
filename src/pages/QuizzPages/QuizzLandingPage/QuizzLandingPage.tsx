@@ -1,3 +1,10 @@
+import {
+  faBadgeCheck,
+  faBalanceScale,
+  faFire,
+  faWeightScale,
+} from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -5,12 +12,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const QuizzLandingPage = () => {
   return (
     <section className="flex flex-col justify-center items-center">
-      <h1 className="text-2xl font-bold mb-2 mt-8 text-center">
+      <div id="timer" className="bg-red-400 w-full h-16 fixed top-0 z-10">
+        {/* Conteúdo do timer aqui, se necessário */}
+      </div>
+
+      <h1 className="text-2xl font-bold mb-2 mt-20 text-center">
         Personalizado pro <br /> seu biotipo!
       </h1>
       <p className="text-lg mb-8">Resultados já na primeira semana</p>
 
-      <div className="bg-gray-100 rounded-lg shadow-lg max-w-3xl w-full">
+      <div className="bg-gray-100 rounded-lg shadow-lg p-6 max-w-3xl w-full">
         <div className="flex md:flex-row justify-around items-center">
           <div className="text-center mb-6 md:mb-0">
             <span className="block text-gray-500 mb-2">Agora</span>
@@ -56,56 +67,81 @@ const QuizzLandingPage = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg max-w-md w-full mt-4 p-4">
-        <h1 className="text-3xl font-bold mb-10 mt-4">Seu plano está pronto!</h1>
-        <div className="text-center mb-4">
-          <p>
-            Objectif: <strong>Perdre du poids</strong>
-          </p>
-          <p>
-            Poids ciblé: <strong>65 kg</strong>
-          </p>
+      <div className="bg-white rounded-lg shadow-lg max-w-md w-full  p-4">
+        <h1 className="text-3xl font-bold mb-10 mt-4">
+          Seu plano está pronto!
+        </h1>
+        <div className="flex justify-center gap-2 text-center mb-8">
+          <div>
+            <FontAwesomeIcon
+              icon={faFire}
+              className="rounded-lg p-3 text-2xl bg-red-300"
+            />
+          </div>
+          <div className="flex flex-col">
+            <div className="text-start">
+              <p>Meta:</p>
+              <p>
+                <strong>Perder peso</strong>
+              </p>
+            </div>
+          </div>
+          <div className="m-1"></div>
+          <div>
+            <FontAwesomeIcon
+              icon={faWeightScale}
+              className="rounded-lg p-3 text-2xl bg-red-300"
+            />
+          </div>
+          <div className="flex flex-col">
+            <div className="text-start">
+              <p>Peso Desejado:</p>
+              <p>
+                <strong>76 Kg</strong>
+              </p>
+            </div>
+          </div>
         </div>
         <div className="space-y-4">
           <div className="border p-4 rounded-lg">
             <label className="flex justify-between items-center">
-              <span>Essai d'1 semaine</span>
+              <span>1 Semana de Teste</span>
               <span className="font-bold">R$9,99</span>
             </label>
-            <p className="text-gray-500 text-sm">PLAN 4-LA SEMAINE</p>
+            <p className="text-gray-500 text-sm">R$49,90</p>
           </div>
           <div className="border p-4 rounded-lg bg-red-100">
             <label className="flex justify-between items-center">
-              <span className="font-bold text-red-600">Plan 4-Semaines</span>
+              <span className="font-bold text-red-600">Plano de 4 semanas</span>
               <span className="font-bold text-red-600">R$8,56</span>
             </label>
-            <p className="text-gray-500 text-sm">R$239,70</p>
+            <p className="text-gray-500 text-sm">R$139,70</p>
           </div>
           <div className="border p-4 rounded-lg">
             <label className="flex justify-between items-center">
-              <span>Plan 12-Semaines</span>
+              <span>Plano de 12 semanas</span>
               <span className="font-bold">R$4,27</span>
             </label>
-            <p className="text-gray-500 text-sm">R$359,10</p>
+            <p className="text-gray-500 text-sm">R$259,10</p>
           </div>
         </div>
-        <div className="text-center mt-6">
-          <button className="bg-red-500 text-white py-2 px-4 rounded-full">
-            OBTENIR MON PROGRAMME
+        <div className="text-center mt-6 mb-10">
+          <button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
+            OBTER MEU PLANO
           </button>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-lg max-w-md w-full mt-8 p-4">
-        <h2 className="text-xl font-bold text-center mb-4">
-          Les points forts de votre programme
+        <h2 className="text-2xl font-bold text-center mb-8">
+          O que você vai receber?
         </h2>
         <ul className="space-y-4">
           <li className="flex items-start">
             <span className="mr-2">🏋️</span>
             <div>
               <p className="font-bold">
-                Simples séances d'entraînement en salle
+                Análise profissional da sua aptidão física e hábitos alimentares
               </p>
               <p className="text-gray-500 text-sm">
                 pour mincir et se tonifier facilement à la maison
@@ -115,7 +151,7 @@ const QuizzLandingPage = () => {
           <li className="flex items-start">
             <span className="mr-2">⏱️</span>
             <div>
-              <p className="font-bold">Exercices de 10 à 15 minutes</p>
+              <p className="font-bold">Exercícios de 10 a 15 minutos</p>
               <p className="text-gray-500 text-sm">
                 pour obtenir une taille fine, des fesses plus rondes et des
                 cuisses plus fines.
@@ -125,7 +161,9 @@ const QuizzLandingPage = () => {
           <li className="flex items-start">
             <span className="mr-2">🏠</span>
             <div>
-              <p className="font-bold">Exercices pour débutants</p>
+              <p className="font-bold">
+                Treinamento personalizado para perder peso e tonificar o corpo
+              </p>
               <p className="text-gray-500 text-sm">
                 que vous pouvez faire facilement à la maison
               </p>
@@ -134,7 +172,9 @@ const QuizzLandingPage = () => {
           <li className="flex items-start">
             <span className="mr-2">🍽️</span>
             <div>
-              <p className="font-bold">Plan alimentaire personnalisé</p>
+              <p className="font-bold">
+                Exercícios para uma cintura fina e uma postura perfeita
+              </p>
               <p className="text-gray-500 text-sm">
                 avec plus de 1000 délicieuses recettes pour perdre du poids
               </p>
@@ -143,7 +183,10 @@ const QuizzLandingPage = () => {
           <li className="flex items-start">
             <span className="mr-2">💡</span>
             <div>
-              <p className="font-bold">Conseils d'experts et astuces</p>
+              <p className="font-bold">
+                Plano de fortalecimento e tonificação muscular para os seus
+                abdominais, lombar, quadris e glúteos
+              </p>
               <p className="text-gray-500 text-sm">
                 pour améliorer votre mode de vie et ne pas reprendre de poids
               </p>
@@ -152,7 +195,7 @@ const QuizzLandingPage = () => {
         </ul>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg max-w-md w-full mt-8 p-4">
+      <div className="bg-white rounded-lg shadow-l m-4 p-4">
         <h2 className="text-xl font-bold text-center mb-4">
           Des résultats qui nous rendent fiers
         </h2>
@@ -195,50 +238,59 @@ const QuizzLandingPage = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg max-w-md w-full mt-8 p-4">
+      <div className="bg-white rounded-lg shadow-lg mt-4 p-4">
         <h2 className="text-xl font-bold text-center mb-4">
           Les utilisateurs aiment nos plans
         </h2>
         <div className="space-y-4">
           <div className="border p-4 rounded-lg">
             <p className="font-bold">JD</p>
-            <p className="text-gray-500 text-sm">★★★★★</p>
+            <p className="text-yellow-500 text-sm">★★★★★</p>
             <p className="text-gray-500 text-sm">
-              L'application BetterMe a une façon unique de rester en contact
-              avec moi tout au long de la journée. Elle me donne des objectifs
-              réalisables et m'incite à être plus active.
+              Eu nunca gostei tanto do meu bumbum! Nunca recebi tantos elogios e
+              tanta atenção! É simplesmente inacreditável! Não consigo parar de
+              me olhar no espelho!
             </p>
           </div>
           <div className="border p-4 rounded-lg">
             <p className="font-bold">Joelle</p>
-            <p className="text-gray-500 text-sm">★★★★★</p>
+            <p className="text-yellow-500 text-sm">★★★★★</p>
             <p className="text-gray-500 text-sm">
-              J'adore ! J'aime comment le défi de la marche m'a donné confiance
-              en mon corps. Mon humeur a changé ! BetterMe a changé ma vision de
-              l'exercice et de la santé.
+              Ok, quem quer que tenha criado isso, eu agradeço muito! Isso está
+              me deixando em forma e acho que se eu fizer isso por todo o mês ou
+              talvez apenas por essa semana inteira, com certeza vou perder
+              alguns quilos e queimar gordura abdominal. Quero dizer, é um pouco
+              cansativo, mas em qualquer lugar onde tenham bons exercícios, eles
+              vão te cansar e você ficará cansado depois. Mas eu recebo apoio da
+              minha mãe porque fazemos juntos, então é divertido para nós.
+              Obrigado e para você que está lendo isso, tenha um ótimo dia.
             </p>
           </div>
           <div className="border p-4 rounded-lg">
             <p className="font-bold">Firdevs1945</p>
-            <p className="text-gray-500 text-sm">★★★★★</p>
+            <p className="text-yellow-500 text-sm">★★★★★</p>
             <p className="text-gray-500 text-sm">
-              BetterMe m'aide à rester motivé et à atteindre mes objectifs de
-              mise en forme. C'est un excellent outil pour suivre mes progrès.
+              Great app especially for beginners! Keeps me motivated and
+              accountable! I also don't have to think about what exercise I need
+              to do! Just gotta stay ready. Wish it had stretching routines tho!
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg max-w-md w-full mt-8 p-4">
+      <div className="bg-white border border-red-500 border-solid m-4 flex flex-col items-center justify-center rounded- shadow-lg p-4">
+        <FontAwesomeIcon
+          icon={faBadgeCheck}
+          className="rounded-lg p-3 text-2xl w-8 mb-3 bg-red-300"
+        />
         <h2 className="text-xl font-bold text-center mb-4">
-          garantie satisfait ou remboursé de 30 jours
+          Garantia de devolução do dinheiro em 7 dias
         </h2>
         <p className="text-gray-500 text-sm mb-4">
-          Nous sommes convaincus que notre plan fonctionnera pour vous et que
-          vous devriez voir des résultats visibles en seulement 4 semaines !
-          Nous sommes même prêts à vous rembourser si vous pouvez prouver que
-          vous avez suivi le programme mais que vous n'avez pas obtenu de
-          résultats.
+          Nós acreditamos que nosso plano pode funcionar para você e você verá
+          resultados visíveis em 4 semanas! Estamos tão confiantes que até
+          estamos dispostos a devolver seu dinheiro se você não ver resultados
+          visíveis e puder demonstrar que seguiu nosso plano.
         </p>
         <p className="text-gray-500 text-sm">
           Pour en savoir plus sur les limitations applicables, consultez notre{" "}
