@@ -6,7 +6,7 @@ import {
 } from "../interface/personalizedAnswers";
 import { IMCType, Question } from "../interface/questions";
 
-export const questionKeto: Question[] = [
+export const questionOptions: Question[] = [
   {
     order: 1,
     question: "Seu plano personalizado em 1 minuto",
@@ -41,19 +41,19 @@ export const questionKeto: Question[] = [
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/sadEmoji.webp",
+        image: "../src/assets/images/cansadoEmoji.webp",
         text: "Triste e desmotivado(a)",
       },
       {
-        image: "../src/assets/images/neutralEmoji.webp",
+        image: "../src/assets/images/tedioEmoji.webp",
         text: "Indiferente",
       },
       {
-        image: "../src/assets/images/smileEmoji.webp",
+        image: "../src/assets/images/sorrisoEmoji.webp",
         text: "Motivado(a) a melhorar",
       },
       {
-        image: "../src/assets/images/happyEmoji.webp",
+        image: "../src/assets/images/sorrisoOculosEmoji.webp",
         text: "Feliz e confiante",
       },
     ],
@@ -78,17 +78,17 @@ export const questionKeto: Question[] = [
       "O que você acha que precisaria mudar para alcançar seu peso ideal?",
     type: "classic",
     options: [
-      { image: "../src/assets/images/fireEmoji.webp", text: "Dieta" },
+      { image: "../src/assets/images/appleEmoji.webp", text: "Dieta" },
       {
-        image: "../src/assets/images/hangLoseEmoji.webp",
+        image: "../src/assets/images/strongEmoji.webp",
         text: "Exercícios",
       },
       {
-        image: "../src/assets/images/strongEmoji.webp",
+        image: "../src/assets/images/familiaEmoji.webp",
         text: "Hábitos diários",
       },
       {
-        image: "../src/assets/images/appleEmoji.webp",
+        image: "../src/assets/images/envergonhadoEmoji.webp",
         text: "Tudo isso junto",
       },
     ],
@@ -100,19 +100,19 @@ export const questionKeto: Question[] = [
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/fireEmoji.webp",
+        image: "../src/assets/images/cansado2Emoji.webp",
         text: "Sim, várias vezes",
       },
       {
-        image: "../src/assets/images/hangLoseEmoji.webp",
+        image: "../src/assets/images/cansadoEmoji.webp",
         text: "Sim, uma vez",
       },
       {
-        image: "../src/assets/images/strongEmoji.webp",
+        image: "../src/assets/images/sorrisoEmoji.webp",
         text: "Não, nunca tentei dieta",
       },
       {
-        image: "../src/assets/images/appleEmoji.webp",
+        image: "../src/assets/images/sorrisoOculosEmoji.webp",
         text: "Nunca me frustrei com dietas",
       },
     ],
@@ -124,19 +124,19 @@ export const questionKeto: Question[] = [
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/fireEmoji.webp",
+        image: "../src/assets/images/fireEmoji.webp", // aqui
         text: "Falta de tempo",
       },
       {
-        image: "../src/assets/images/hangLoseEmoji.webp",
+        image: "../src/assets/images/tedioEmoji.webp",
         text: "Falta de motivação",
       },
       {
-        image: "../src/assets/images/strongEmoji.webp",
+        image: "../src/assets/images/saladaEmoji.webp",
         text: "Hábitos alimentares",
       },
       {
-        image: "../src/assets/images/appleEmoji.webp",
+        image: "../src/assets/images/appleEmoji.webp", // aqui
         text: "Falta de conhecimento",
       },
     ],
@@ -147,19 +147,19 @@ export const questionKeto: Question[] = [
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/fireEmoji.webp",
+        image: "../src/assets/images/cansado2Emoji.webp",
         text: "Sim, definitivamente",
       },
       {
-        image: "../src/assets/images/hangLoseEmoji.webp",
+        image: "../src/assets/images/cansadoEmoji.webp",
         text: "Talvez um pouco",
       },
       {
-        image: "../src/assets/images/strongEmoji.webp",
+        image: "../src/assets/images/sorrisoEmoji.webp",
         text: "Acho que não",
       },
       {
-        image: "../src/assets/images/appleEmoji.webp",
+        image: "../src/assets/images/okEmoji.webp",
         text: "De jeito nenhum",
       },
     ],
@@ -170,15 +170,15 @@ export const questionKeto: Question[] = [
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/fireEmoji.webp",
+        image: "../src/assets/images/sorrisoPreocupadoEmoji.webp",
         text: Biotype.Ectomorph,
       },
       {
-        image: "../src/assets/images/strongEmoji.webp",
+        image: "../src/assets/images/tedioEmoji.webp",
         text: Biotype.Mesomorph,
       },
       {
-        image: "../src/assets/images/hangLoseEmoji.webp",
+        image: "../src/assets/images/envergonhadoEmoji.webp",
         text: Biotype.Endomorph,
       },
     ],
@@ -190,19 +190,19 @@ export const questionKeto: Question[] = [
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/fireEmoji.webp",
+        image: "../src/assets/images/strongEmoji.webp",
         text: "Falta de resultados",
       },
       {
-        image: "../src/assets/images/hangLoseEmoji.webp",
+        image: "../src/assets/images/pizzaEmoji.webp",
         text: "Dificuldade em manter a dieta",
       },
       {
-        image: "../src/assets/images/strongEmoji.webp",
+        image: "../src/assets/images/strongEmoji.webp", // tempo aqui
         text: "Falta de tempo para exercícios",
       },
       {
-        image: "../src/assets/images/appleEmoji.webp",
+        image: "../src/assets/images/cansadoEmoji.webp",
         text: "Falta de motivação",
       },
     ],
@@ -522,93 +522,3 @@ export const questionKeto: Question[] = [
     type: "results-chart-promises",
   },
 ];
-
-//   {
-//     order: 7,
-//     question: "Qual é a sua refeição favorita?",
-//     name: 'favoriteFood',
-//     save: true,
-//     type: "classic",
-//     options: [
-//       { image: "../src/assets/images/fireEmoji.webp", text: "Pizza" },
-//       { image: "../src/assets/images/hangLoseEmoji.webp", text: "Hambúrguer" },
-//       { image: "../src/assets/images/strongEmoji.webp", text: "Salada" },
-//       { image: "../src/assets/images/appleEmoji.webp", text: "Sushi" },
-//     ],
-//   },
-//   {
-//     order: 9,
-//     question: "Qual é o seu maior sonho?",
-//     type: "classic",
-//     options: [
-//       {
-//         image: "../src/assets/images/heartEmoji.webp",
-//         text: "Ser bem-sucedido profissionalmente",
-//       },
-//       {
-//         image: "../src/assets/images/laughEmoji.webp",
-//         text: "Viajar pelo mundo",
-//       },
-//       {
-//         image: "../src/assets/images/cryEmoji.webp",
-//         text: "Ajudar outras pessoas",
-//       },
-//       {
-//         image: "../src/assets/images/coolEmoji.webp",
-//         text: "Viver em harmonia com a natureza",
-//       },
-//     ],
-//   },
-//   {
-//     order: 10,
-//     question: "Se você pudesse ter um superpoder, qual seria?",
-//     type: "multiChoice",
-//     options: [
-//       { image: "../src/assets/images/fireEmoji.webp", text: "Voar" },
-//       {
-//         image: "../src/assets/images/hangLoseEmoji.webp",
-//         text: "Invisibilidade",
-//       },
-//       { image: "../src/assets/images/strongEmoji.webp", text: "Telepatia" },
-//       { image: "../src/assets/images/appleEmoji.webp", text: "Super força" },
-//       {
-//         image: "../src/assets/images/hangLoseEmoji.webp",
-//         text: "Curar qualquer doença",
-//       },
-//       {
-//         image: "../src/assets/images/strongEmoji.webp",
-//         text: "Manipular o tempo",
-//       },
-//       {
-//         image: "../src/assets/images/appleEmoji.webp",
-//         text: "Controlar elementos naturais",
-//       },
-//     ],
-//   },
-//   {
-//     order: 11,
-//     type: "info",
-//     info: [
-//       {
-//         image: "../src/assets/images/woman/results/eqedwf4ar9ec26prkdfa.webp",
-//         title:
-//           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt",
-//         description1:
-//           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt quae omnis placeat ut quisquam provident ame.",
-//       },
-//     ],
-//   },
-//   {
-//     order: 15,
-//     type: "results-analysis",
-//     info: [
-//       {
-//         image: "../src/assets/images/woman/results/eqedwf4ar9ec26prkdfa.webp",
-//         title:
-//           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt",
-//         description1:
-//           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt quae omnis placeat ut quisquam provident ame.",
-//       },
-//     ],
-//   },
-// ];

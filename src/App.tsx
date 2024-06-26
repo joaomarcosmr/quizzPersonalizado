@@ -5,7 +5,7 @@ import QuizzQuestionClassic from "./pages/QuizzPages/QuizzType/QuizzQuestionClas
 import QuizzInfo from "./pages/QuizzPages/QuizzInfo/QuizzInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
-import { questionKeto } from "./services/questionsOptions";
+import { questionOptions } from "./services/questionsOptions";
 import QuizzCalculation from "./pages/QuizzPages/QuizzIMC/QuizzCalculations";
 import { IAnswers } from "./interface/personalizedAnswers";
 import { Option, Question } from "./interface/questions";
@@ -22,7 +22,7 @@ function App() {
     []
   );
 
-  const currentQuestion: Question | undefined = questionKeto.find(
+  const currentQuestion: Question | undefined = questionOptions.find(
     (question) => question.order === currentQuestionNumber
   );
 
