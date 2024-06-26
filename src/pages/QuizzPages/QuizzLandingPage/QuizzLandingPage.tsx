@@ -2,6 +2,7 @@ import {
   faBadgeCheck,
   faClock,
   faFire,
+  faGreaterThan,
   faWeightScale,
 } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,7 +38,7 @@ const QuizzLandingPage = () => {
         className="bg-red-500 w-full h-16 fixed top-0 z-10 flex justify-center items-end pb-2"
       >
         <p className="text-white font-bold text-4xl flex items-center">
-          {`${minutes.toString().padStart(2, "0")} : ${seconds
+          {`${minutes.toString().padStart(2, "0")}:${seconds
             .toString()
             .padStart(2, "0")}`}
           <FontAwesomeIcon icon={faClock} className="rounded-lg p-3 text-2xl" />
@@ -54,7 +55,6 @@ const QuizzLandingPage = () => {
 
       <div className="bg-red-100 rounded-lg shadow-lg max-w-3xl w-full">
         <div className="flex flex md:flex-row justify-around items-center mt-6">
-          
           <div className="text-center  md:mb-0">
             <span className="block text-gray-500 mb-2">Agora</span>
             <img
@@ -62,6 +62,10 @@ const QuizzLandingPage = () => {
               alt="Current Body"
               className="w-48 mx-auto"
             />
+          </div>
+
+          <div className="m-2">
+            <img src="../src/assets/images/seta.png" alt="goal" className='w-12 h-24' />
           </div>
 
           <div className="text-center md:mb-0">
@@ -87,8 +91,6 @@ const QuizzLandingPage = () => {
             </div>
           </div>
 
-          <div className="m-2"></div>
-
           <div className="text-center mb-6 md:mb-0">
             <p className="text-gray-700">Gordura Corporal</p>
             <p className="text-xl font-bold mb-2">Pouca</p>
@@ -103,7 +105,7 @@ const QuizzLandingPage = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg max-w-md w-full  p-4">
+      <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-4">
         <h1 className="text-3xl font-bold mb-10 mt-4">
           Seu plano está pronto!
         </h1>
