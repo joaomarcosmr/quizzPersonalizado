@@ -49,14 +49,11 @@ function App() {
 
   return (
     <>
-      {currentQuestion.type !== "info" &&
-        currentQuestion.type !== "landingPage" &&
-        currentQuestion.type !== "results-analysis" &&
-        currentQuestion.type !== "results-chart-promises" &&
-        currentQuestion.type !== "awaiting" &&
-        currentQuestion.type !== "start" && (
-          <Header progressPercentage={progressPercentage} />
-        )}
+      {(currentQuestion.type !== "classic" &&
+        currentQuestion.type !== "multiChoice" &&
+        currentQuestion.type !== "calculation") && (
+        <Header progressPercentage={progressPercentage} />
+      )}
 
       {currentQuestion.type === "start" && (
         <QuizzStart
@@ -113,7 +110,9 @@ function App() {
         <QuizzGenerating handleNextQuestion={handleNextQuestion} />
       )}
 
-      {currentQuestion.type === "landingPage" && <QuizzLandingPage />}
+      {currentQuestion.type === "landingPage" && (
+        <QuizzLandingPage personalizedAnswers={personalizedAnswers} />
+      )}
     </>
   );
 }

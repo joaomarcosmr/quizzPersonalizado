@@ -9,8 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { IAnswers } from '../../../interface/personalizedAnswers';
 
-const QuizzLandingPage = () => {
+type Props = {
+  personalizedAnswers: IAnswers;
+};
+
+const QuizzLandingPage = ({personalizedAnswers}: Props) => {
   const [minutes, setMinutes] = useState(10);
   const [seconds, setSeconds] = useState(0);
 
@@ -58,7 +63,7 @@ const QuizzLandingPage = () => {
           <div className="text-center  md:mb-0">
             <span className="block text-gray-500 mb-2">Agora</span>
             <img
-              src="../src/assets/images/woman/results/normal.webp"
+              src={personalizedAnswers?.bodyImage?.image}
               alt="Current Body"
               className="w-48 mx-auto"
             />
