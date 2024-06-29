@@ -76,7 +76,7 @@ const QuizzLandingPage = ({personalizedAnswers}: Props) => {
           <div className="text-center md:mb-0">
             <span className="block text-gray-500 mb-2">Sua meta</span>
             <img
-              src="../src/assets/images/woman/results/forte.webp"
+              src={personalizedAnswers?.bodyImage?.alt !== 'obeso' ? "../src/assets/images/woman/results/forte.webp" : "../src/assets/images/woman/results/normal.webp"}
               alt="Goal Body"
               className="w-48 mx-auto"
             />
@@ -86,7 +86,7 @@ const QuizzLandingPage = ({personalizedAnswers}: Props) => {
         <div className="flex bg-gray-200 p-2 md:flex-row justify-around items-center">
           <div className="text-center mb-6 md:mb-0">
             <p className="text-gray-700">Gordura Corporal</p>
-            <p className="text-xl font-bold mb-2">Alta</p>
+            <p className="text-xl font-bold mb-2">{personalizedAnswers.bodyImage.alt === "obesa" || personalizedAnswers.bodyImage.alt === "sobrepeso" ? "Alta" : "Normal"}</p>
             <p className="text-gray-700">Vida saudável</p>
             <p className="text-xl font-bold mb-4">Baixa</p>
             <div className="flex justify-center space-x-2">
@@ -98,7 +98,7 @@ const QuizzLandingPage = ({personalizedAnswers}: Props) => {
 
           <div className="text-center mb-6 md:mb-0">
             <p className="text-gray-700">Gordura Corporal</p>
-            <p className="text-xl font-bold mb-2">Pouca</p>
+            <p className="text-xl font-bold mb-2">Baixa</p>
             <p className="text-gray-700">Vida saudável</p>
             <p className="text-xl font-bold mb-4">Avançada</p>
             <div className="flex justify-center space-x-2">
@@ -125,7 +125,7 @@ const QuizzLandingPage = ({personalizedAnswers}: Props) => {
             <div className="text-start">
               <p>Meta:</p>
               <p>
-                <strong>Perder peso</strong>
+                <strong>{personalizedAnswers?.goalWeight}</strong>
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ const QuizzLandingPage = ({personalizedAnswers}: Props) => {
             <div className="text-start">
               <p>Peso Desejado:</p>
               <p>
-                <strong>76 Kg</strong>
+                <strong>{personalizedAnswers?.targetWeight} Kg</strong>
               </p>
             </div>
           </div>

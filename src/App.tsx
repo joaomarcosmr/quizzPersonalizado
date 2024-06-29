@@ -46,13 +46,15 @@ function App() {
       </section>
     );
   }
+	
+	console.log(personalizedAnswers)
 
   return (
     <>
-      {(currentQuestion.type !== "classic" &&
-        currentQuestion.type !== "multiChoice" &&
-        currentQuestion.type !== "calculation") && (
-        <Header progressPercentage={progressPercentage} />
+      {(currentQuestion.type === "classic" ||
+        currentQuestion.type === "multiChoice" ||
+        currentQuestion.type === "calculation") && (      
+				<Header progressPercentage={progressPercentage} />
       )}
 
       {currentQuestion.type === "start" && (

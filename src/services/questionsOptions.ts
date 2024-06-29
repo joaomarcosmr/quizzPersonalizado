@@ -10,11 +10,6 @@ export const questionOptions: Question[] = [
   {
     order: 1,
     question: "Seu plano personalizado em 1 minuto",
-    type: "landingPage",
-  },
-  {
-    order: 1,
-    question: "Seu plano personalizado em 1 minuto",
     type: "start",
     options: [
       {
@@ -362,12 +357,12 @@ export const questionOptions: Question[] = [
     },
   },
   {
-    order: 20,
+    order: 19,
     type: "calculation",
     calculation: { title: "Qual seu nome?" },
   },
   {
-    order: 21,
+    order: 20,
     question: "Como você se sentiria ao atingir seu peso ideal?",
     type: "classic",
     options: [
@@ -390,7 +385,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 22,
+    order: 21,
     question:
       "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
     type: "classic",
@@ -411,7 +406,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 23,
+    order: 22,
     question:
       "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
     type: "classic",
@@ -431,7 +426,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 24,
+    order: 23,
     question: "Quais benefícios você espera obter ao alcançar seu peso ideal?",
     type: "classic",
     options: [
@@ -454,7 +449,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 25,
+    order: 24,
     question: "Como você se motivaria a manter o peso ideal após alcançá-lo?",
     type: "classic",
     options: [
@@ -477,7 +472,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 26,
+    order: 25,
     question:
       "Quais mudanças você está disposto(a) a fazer para alcançar seu peso ideal?",
     type: "classic",
@@ -501,7 +496,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 27,
+    order: 26,
     type: "info",
     info: [
       {
@@ -514,11 +509,16 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 28,
+    order: 27,
     type: "results-analysis",
   },
   {
-    order: 29,
+    order: 28,
     type: "results-chart-promises",
+  },
+	{
+    order: 29,
+    question: "Seu plano personalizado em 1 minuto",
+    type: "landingPage",
   },
 ];
