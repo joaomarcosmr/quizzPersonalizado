@@ -32,12 +32,23 @@ export const questionOptions: Question[] = [
   },
   {
     order: 2,
+    type: "info",
+    info: [
+      {
+        image: "../src/assets/images/inicial.png",
+        title: "Pilates na Parede",
+        description1: "Mais de 3435 mulheres estão queimando gorduras com esses exercícios.",
+      },
+    ],
+  },
+  {
+    order: 3,
     question: "Como você se sente em relação ao seu peso atual?",
     type: "classic",
     options: [
       {
         image: "../src/assets/images/cansadoEmoji.webp",
-        text: "Triste e desmotivado(a)",
+        text: "Triste e desmotivada",
       },
       {
         image: "../src/assets/images/tedioEmoji.webp",
@@ -45,7 +56,7 @@ export const questionOptions: Question[] = [
       },
       {
         image: "../src/assets/images/sorrisoEmoji.webp",
-        text: "Motivado(a) a melhorar",
+        text: "Motivada a melhorar",
       },
       {
         image: "../src/assets/images/sorrisoOculosEmoji.webp",
@@ -54,7 +65,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 2,
+    order: 4,
     question: "Você sente que seu peso atual limita suas atividades diárias?",
     type: "classic",
     options: [
@@ -68,9 +79,8 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 3,
-    question:
-      "O que você acha que precisaria mudar para alcançar seu peso ideal?",
+    order: 5,
+    question: "O que você acha que precisaria mudar para alcançar seu peso ideal?",
     type: "classic",
     options: [
       { image: "../src/assets/images/appleEmoji.webp", text: "Dieta" },
@@ -89,9 +99,8 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 4,
-    question:
-      "Você já tentou alguma dieta que não deu certo e acabou se frustrando?",
+    order: 6,
+    question: "Você já tentou alguma dieta que não deu certo e acabou se frustrando?",
     type: "classic",
     options: [
       {
@@ -113,13 +122,12 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 5,
-    question:
-      "Quais são os maiores obstáculos que você enfrenta para atingir seu peso desejado?",
+    order: 7,
+    question: "Quais são os maiores obstáculos que você enfrenta para atingir seu peso desejado?",
     type: "classic",
     options: [
       {
-        image: "../src/assets/images/fireEmoji.webp", // aqui
+        image: "../src/assets/images/fireEmoji.webp",
         text: "Falta de tempo",
       },
       {
@@ -131,13 +139,13 @@ export const questionOptions: Question[] = [
         text: "Hábitos alimentares",
       },
       {
-        image: "../src/assets/images/appleEmoji.webp", // aqui
+        image: "../src/assets/images/appleEmoji.webp",
         text: "Falta de conhecimento",
       },
     ],
   },
   {
-    order: 6,
+    order: 8,
     question: "Você acha que o seu peso atual pode estar afetando sua saúde?",
     type: "classic",
     options: [
@@ -160,7 +168,37 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 7,
+    order: 9,
+    question: "Se houvesse uma maneira eficaz de perder peso, você estaria disposta a tentar?",
+    type: "classic",
+    options: [
+      {
+        image: "../src/assets/images/fireEmoji.webp",
+        text: "Sim, estou pronta",
+      },
+      {
+        image: "../src/assets/images/hangLoseEmoji.webp",
+        text: "Talvez, dependendo da solução",
+      },
+      {
+        image: "../src/assets/images/strongEmoji.webp",
+        text: "Estou um pouco cética",
+      },
+    ],
+  },
+  {
+    order: 10,
+    type: "info",
+    info: [
+      {
+        image: "../src/assets/images/terra-noticia.png",
+        title: "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
+        description1: "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
+      },
+    ],
+  },
+  {
+    order: 11,
     question: "Como você descreveria sua realidade?",
     type: "classic",
     options: [
@@ -175,82 +213,6 @@ export const questionOptions: Question[] = [
       {
         image: "../src/assets/images/envergonhadoEmoji.webp",
         text: Biotype.Endomorph,
-      },
-    ],
-  },
-  {
-    order: 8,
-    question:
-      "Qual foi o maior desafio que você encontrou ao tentar perder peso?",
-    type: "classic",
-    options: [
-      {
-        image: "../src/assets/images/strongEmoji.webp",
-        text: "Falta de resultados",
-      },
-      {
-        image: "../src/assets/images/pizzaEmoji.webp",
-        text: "Dificuldade em manter a dieta",
-      },
-      {
-        image: "../src/assets/images/strongEmoji.webp", // tempo aqui
-        text: "Falta de tempo para exercícios",
-      },
-      {
-        image: "../src/assets/images/cansadoEmoji.webp",
-        text: "Falta de motivação",
-      },
-    ],
-  },
-  {
-    order: 9,
-    question: "Você acredita que há uma solução para o seu problema de peso?",
-    type: "classic",
-    options: [
-      {
-        image: "../src/assets/images/fireEmoji.webp",
-        text: "Sim, com certeza",
-      },
-      { image: "../src/assets/images/hangLoseEmoji.webp", text: "Talvez" },
-      {
-        image: "../src/assets/images/strongEmoji.webp",
-        text: "Acho difícil",
-      },
-      { image: "../src/assets/images/appleEmoji.webp", text: "Não acredito" },
-    ],
-  },
-  {
-    order: 10,
-    question:
-      "Se houvesse uma maneira eficaz de perder peso, você estaria disposto(a) a tentar?",
-    type: "classic",
-    options: [
-      {
-        image: "../src/assets/images/fireEmoji.webp",
-        text: "Sim, estou pronto(a)",
-      },
-      {
-        image: "../src/assets/images/hangLoseEmoji.webp",
-        text: "Talvez, dependendo da solução",
-      },
-      {
-        image: "../src/assets/images/strongEmoji.webp",
-        text: "Estou um pouco cético(a)",
-      },
-      {
-        image: "../src/assets/images/appleEmoji.webp",
-        text: "Não estou interessado(a)",
-      },
-    ],
-  },
-  {
-    order: 11,
-    question: "Qual é a sua altura e peso atual?",
-    type: "classic",
-    options: [
-      {
-        image: "../src/assets/images/fireEmoji.webp",
-        text: "Anote sua altura e peso",
       },
     ],
   },
@@ -298,7 +260,7 @@ export const questionOptions: Question[] = [
   },
   {
     order: 14,
-    question: "Você se alimenta de maneira saúdavel?",
+    question: "Você se alimenta de maneira saudável?",
     name: "fitnessLevel",
     save: true,
     type: "classic",
@@ -332,7 +294,7 @@ export const questionOptions: Question[] = [
     calculation: {
       title: "Qual sua altura?",
       measure: "cm",
-      measureDescription: "Insira um valor de 90 a 243kg",
+      measureDescription: "Insira um valor de 90 a 243cm",
       imc: IMCType.Info,
     },
   },
@@ -361,8 +323,12 @@ export const questionOptions: Question[] = [
     type: "calculation",
     calculation: { title: "Qual seu nome?" },
   },
-  {
+	{
     order: 20,
+    type: "results-analysis",
+  },
+  {
+    order: 21,
     question: "Como você se sentiria ao atingir seu peso ideal?",
     type: "classic",
     options: [
@@ -372,11 +338,11 @@ export const questionOptions: Question[] = [
       },
       {
         image: "../src/assets/images/hangLoseEmoji.webp",
-        text: "Mais saudável e ativo(a)",
+        text: "Mais saudável e ativa",
       },
       {
         image: "../src/assets/images/strongEmoji.webp",
-        text: "Satisfeito(a) e motivado(a)",
+        text: "Satisfeita e motivada",
       },
       {
         image: "../src/assets/images/appleEmoji.webp",
@@ -385,9 +351,8 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 21,
-    question:
-      "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
+    order: 22,
+    question: "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
     type: "classic",
     options: [
       { image: "../src/assets/images/fireEmoji.webp", text: "Esportes" },
@@ -406,14 +371,13 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 22,
-    question:
-      "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
+    order: 23,
+    question: "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
     type: "classic",
     options: [
       {
         image: "../src/assets/images/fireEmoji.webp",
-        text: "Muito mais ativo e saudável",
+        text: "Muito mais ativa e saudável",
       },
       {
         image: "../src/assets/images/hangLoseEmoji.webp",
@@ -426,7 +390,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 23,
+    order: 24,
     question: "Quais benefícios você espera obter ao alcançar seu peso ideal?",
     type: "classic",
     options: [
@@ -449,75 +413,11 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 24,
-    question: "Como você se motivaria a manter o peso ideal após alcançá-lo?",
-    type: "classic",
-    options: [
-      {
-        image: "../src/assets/images/fireEmoji.webp",
-        text: "Acompanhamento constante",
-      },
-      {
-        image: "../src/assets/images/hangLoseEmoji.webp",
-        text: "Participação em grupos de apoio",
-      },
-      {
-        image: "../src/assets/images/strongEmoji.webp",
-        text: "Definindo novas metas",
-      },
-      {
-        image: "../src/assets/images/appleEmoji.webp",
-        text: "Mantendo hábitos saudáveis",
-      },
-    ],
-  },
-  {
     order: 25,
-    question:
-      "Quais mudanças você está disposto(a) a fazer para alcançar seu peso ideal?",
-    type: "classic",
-    options: [
-      {
-        image: "../src/assets/images/fireEmoji.webp",
-        text: "Mudanças radicais na dieta",
-      },
-      {
-        image: "../src/assets/images/hangLoseEmoji.webp",
-        text: "Iniciar uma rotina de exercícios",
-      },
-      {
-        image: "../src/assets/images/strongEmoji.webp",
-        text: "Reduzir o estresse",
-      },
-      {
-        image: "../src/assets/images/appleEmoji.webp",
-        text: "Dormir melhor",
-      },
-    ],
+    type: "results-chart-promises",
   },
   {
     order: 26,
-    type: "info",
-    info: [
-      {
-        image: "../src/assets/images/woman/results/eqedwf4ar9ec26prkdfa.webp",
-        title:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt",
-        description1:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt quae omnis placeat ut quisquam provident ame.",
-      },
-    ],
-  },
-  {
-    order: 27,
-    type: "results-analysis",
-  },
-  {
-    order: 28,
-    type: "results-chart-promises",
-  },
-	{
-    order: 29,
     question: "Seu plano personalizado em 1 minuto",
     type: "landingPage",
   },

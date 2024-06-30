@@ -111,8 +111,8 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 			</div>
 
 			<div className="bg-white rounded-lg shadow-lg max-w-md w-full p-4">
-				<h1 className="text-3xl font-bold mb-10 mt-4">
-					Seu plano está pronto!
+				<h1 className="text-3xl font-bold mb-10 mt-4 text-center">
+					<span className="text-red-400">{personalizedAnswers.name}</span>, seu plano <br /> está pronto!
 				</h1>
 				<div className="flex justify-center gap-2 text-center mb-8">
 					<div>
@@ -145,98 +145,83 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 						</div>
 					</div>
 				</div>
-				<div className="space-y-4">
-					<div className="border p-4 rounded-lg">
-						<label className="flex justify-between items-center">
-							<span>1 Semana de Teste</span>
-							<span className="font-bold">R$9,99</span>
-						</label>
-						<p className="text-gray-500 text-sm">R$49,90</p>
-					</div>
-					<div className="border p-4 rounded-lg bg-red-100">
-						<label className="flex justify-between items-center">
-							<span className="font-bold text-red-600">Plano de 4 semanas</span>
-							<span className="font-bold text-red-600">R$8,56</span>
-						</label>
-						<p className="text-gray-500 text-sm">R$139,70</p>
-					</div>
-					<div className="border p-4 rounded-lg">
-						<label className="flex justify-between items-center">
-							<span>Plano de 12 semanas</span>
-							<span className="font-bold">R$4,27</span>
-						</label>
-						<p className="text-gray-500 text-sm">R$259,10</p>
-					</div>
+
+				<div className="w-full mt-8 p-4">
+					<h2 className="text-2xl font-bold text-center mb-8">
+						O que você vai receber?
+					</h2>
+					<ul className="space-y-4">
+						<li className="flex items-start">
+							<span className="mr-2">🏋️</span>
+							<div>
+								<p className="font-bold">
+									Análise profissional da sua aptidão física e hábitos alimentares
+								</p>
+								<p className="text-gray-500 text-sm">
+									Pelas suas respostas saberemos utilizar das melhores tecnicas atuais para te ajudar na queima de gordura.
+								</p>
+							</div>
+						</li>
+						<li className="flex items-start">
+							<span className="mr-2">⏱️</span>
+							<div>
+								<p className="font-bold">Exercícios de 10 a 15 minutos</p>
+								<p className="text-gray-500 text-sm">
+									Com base nos seus resultados da pesquisa, vamos te entregar uma lista de exercicios para fazer em casa, de apenas 10 minutos mas que vao continuar queimando calorias enquanto dorme!
+								</p>
+							</div>
+						</li>
+						<li className="flex items-start">
+							<span className="mr-2">🏠</span>
+							<div>
+								<p className="font-bold">
+									Treinamento personalizado para perder peso e tonificar o corpo
+								</p>
+								<p className="text-gray-500 text-sm">
+									Os exercicios e alimentacao que voce recebera serao todos feitos para o seu biotipo e adaptaveis para sua rotina, e o melhor, para fazer em casa rapidinho.
+								</p>
+							</div>
+						</li>
+						<li className="flex items-start">
+							<span className="mr-2">🍽️</span>
+							<div>
+								<p className="font-bold">
+									Receitas exclusivas, sem parar de comer o que voce gosta!
+								</p>
+								<p className="text-gray-500 text-sm">
+									Fazer dieta vai ser divertido! Pelas suas respostas, podemos ainda encaixar pizzas e hamburgueres para sua dieta.
+								</p>
+							</div>
+						</li>
+						<li className="flex items-start">
+							<span className="mr-2">💡</span>
+							<div>
+								<p className="font-bold">
+									Plano de fortalecimento e tonificação muscular para os seus
+									abdominais, lombar, quadris e glúteos
+								</p>
+								<p className="text-gray-500 text-sm">
+									Alem de emagrecer, voce tambem ira ficar forte! Os exercicios que te encaminharemos te trara pernas durinhas e um corpo te atriz de cinema!
+								</p>
+							</div>
+						</li>
+					</ul>
 				</div>
-				<div className="text-center mt-6 mb-10">
+
+				<div className="text-center text-black">
+					<p className="line-through text-lg text-gray-400">De R$ 97,00</p>
+					<p className="text-4xl font-bold">por apenas 4x de:</p>
+					<p className="text-6xl font-bold text-red-400">R$ 5,35</p>
+					<p className="text-2xl mt-2">ou R$ 19,90 à vista</p>
+				</div>
+
+				<div className="text-center mt-3 mb-10">
 					<button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
 						OBTER MEU PLANO
 					</button>
 				</div>
 			</div>
 
-			<div className="bg-white rounded-lg shadow-lg max-w-md w-full mt-8 p-4">
-				<h2 className="text-2xl font-bold text-center mb-8">
-					O que você vai receber?
-				</h2>
-				<ul className="space-y-4">
-					<li className="flex items-start">
-						<span className="mr-2">🏋️</span>
-						<div>
-							<p className="font-bold">
-								Análise profissional da sua aptidão física e hábitos alimentares
-							</p>
-							<p className="text-gray-500 text-sm">
-								pour mincir et se tonifier facilement à la maison
-							</p>
-						</div>
-					</li>
-					<li className="flex items-start">
-						<span className="mr-2">⏱️</span>
-						<div>
-							<p className="font-bold">Exercícios de 10 a 15 minutos</p>
-							<p className="text-gray-500 text-sm">
-								pour obtenir une taille fine, des fesses plus rondes et des
-								cuisses plus fines.
-							</p>
-						</div>
-					</li>
-					<li className="flex items-start">
-						<span className="mr-2">🏠</span>
-						<div>
-							<p className="font-bold">
-								Treinamento personalizado para perder peso e tonificar o corpo
-							</p>
-							<p className="text-gray-500 text-sm">
-								que vous pouvez faire facilement à la maison
-							</p>
-						</div>
-					</li>
-					<li className="flex items-start">
-						<span className="mr-2">🍽️</span>
-						<div>
-							<p className="font-bold">
-								Exercícios para uma cintura fina e uma postura perfeita
-							</p>
-							<p className="text-gray-500 text-sm">
-								avec plus de 1000 délicieuses recettes pour perdre du poids
-							</p>
-						</div>
-					</li>
-					<li className="flex items-start">
-						<span className="mr-2">💡</span>
-						<div>
-							<p className="font-bold">
-								Plano de fortalecimento e tonificação muscular para os seus
-								abdominais, lombar, quadris e glúteos
-							</p>
-							<p className="text-gray-500 text-sm">
-								pour améliorer votre mode de vie et ne pas reprendre de poids
-							</p>
-						</div>
-					</li>
-				</ul>
-			</div>
 
 			<div className="bg-white rounded-lg shadow-l m-4 p-4 w-96">
 				<h2 className="text-xl font-bold text-center mb-4">
@@ -279,11 +264,11 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 
 			<div className="bg-white rounded-lg shadow-lg mt-4 p-4">
 				<h2 className="text-xl font-bold text-center mb-4">
-					Les utilisateurs aiment nos plans
+					O que os usuários do programa estão falando...
 				</h2>
 				<div className="space-y-4">
 					<div className="border p-4 rounded-lg">
-						<p className="font-bold">JD</p>
+						<p className="font-bold">@leticia.santsbr</p>
 						<p className="text-yellow-500 text-sm">★★★★★</p>
 						<p className="text-gray-500 text-sm">
 							Eu nunca gostei tanto do meu bumbum! Nunca recebi tantos elogios e
@@ -292,7 +277,7 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 						</p>
 					</div>
 					<div className="border p-4 rounded-lg">
-						<p className="font-bold">Joelle</p>
+						<p className="font-bold">@_joellesimas</p>
 						<p className="text-yellow-500 text-sm">★★★★★</p>
 						<p className="text-gray-500 text-sm">
 							Ok, quem quer que tenha criado isso, eu agradeço muito! Isso está
@@ -306,15 +291,26 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 						</p>
 					</div>
 					<div className="border p-4 rounded-lg">
-						<p className="font-bold">Firdevs1945</p>
+						<p className="font-bold">@fatimaborges735</p>
 						<p className="text-yellow-500 text-sm">★★★★★</p>
 						<p className="text-gray-500 text-sm">
-							Great app especially for beginners! Keeps me motivated and
-							accountable! I also don't have to think about what exercise I need
-							to do! Just gotta stay ready. Wish it had stretching routines tho!
+							App ótimo, especialmente para iniciantes! Me mantém motivada e responsável! Também não preciso pensar no exercício que tenho que fazer! Só preciso estar pronta. Só queria que tivesse rotinas de alongamento!
 						</p>
 					</div>
 				</div>
+			</div>
+
+			<div className="text-center text-black mt-6">
+				<p className="line-through text-lg text-gray-400">De R$ 97,00</p>
+				<p className="text-4xl font-bold">por apenas 4x de:</p>
+				<p className="text-6xl font-bold text-red-400">R$ 5,35</p>
+				<p className="text-2xl mt-2">ou R$ 19,90 à vista</p>
+			</div>
+
+			<div className="text-center mt-3 mb-10">
+				<button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
+					OBTER MEU PLANO
+				</button>
 			</div>
 
 			<div className="bg-white border border-red-500 border-solid m-4 flex flex-col items-center justify-center rounded-xl shadow-lg p-4">
@@ -331,17 +327,17 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 					estamos dispostos a devolver seu dinheiro se você não ver resultados
 					visíveis e puder demonstrar que seguiu nosso plano.
 				</p>
-				<p className="text-gray-500 text-sm">
-					Pour en savoir plus sur les limitations applicables, consultez notre{" "}
-					<a href="#" className="text-blue-500">
-						Politicas de reembolso
+				<p className="text-gray-300 text-sm text-center">
+					Por favor, consulte nossas politicas de reembolso.
+					<a href="#" className="text-blue-300">
+						<br /> Politicas de reembolso
 					</a>
 					.
 				</p>
-				<p className="text-gray-500 text-xs mt-4">
+				{/* <p className="text-gray-500 text-xs mt-4">
 					BetterMe International Limited | Themistokli Dervi 39, 1st floor,
 					Office 104, 1066, Nicosia, Cyprus
-				</p>
+				</p> */}
 			</div>
 		</section>
 	);
