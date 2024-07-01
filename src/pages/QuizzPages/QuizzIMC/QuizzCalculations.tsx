@@ -20,7 +20,7 @@ const QuizzCalculation = ({
 }: Props) => {
 
 	useEffect(() => {
-		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion}`);
+		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion.order}`);
 	}, [currentQuestion]);
 
 	const [name, setName] = useState<string>("");

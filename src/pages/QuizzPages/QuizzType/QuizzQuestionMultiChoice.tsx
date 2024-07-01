@@ -13,7 +13,7 @@ const QuizzQuestionMultiChoice = ({
 }: Props) => {
 
 	useEffect(() => {
-		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion}`);
+		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion.order}`);
 	}, [currentQuestion]);
 
 	const [selectedOptions, setSelectedOptions] = useState<Array<Option>>([]);

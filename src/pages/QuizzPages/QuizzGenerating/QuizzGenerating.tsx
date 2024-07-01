@@ -19,7 +19,6 @@ const QuizzGenerating = ({ handleNextQuestion }: Props) => {
 					return prevPercentage + 1;
 				} else {
 					clearInterval(interval);
-					handleNextQuestion()
 					return prevPercentage;
 				}
 			});
@@ -27,6 +26,10 @@ const QuizzGenerating = ({ handleNextQuestion }: Props) => {
 
 		return () => clearInterval(interval);
 	}, []);
+
+	useEffect(() => {
+		if (percentage > 99) handleNextQuestion()
+	}, [percentage])
 
 	const radius = 80;
 	const circumference = 2 * Math.PI * radius;
@@ -73,7 +76,7 @@ const QuizzGenerating = ({ handleNextQuestion }: Props) => {
 			>
 				<div className="flex items-center gap-2">
 					<img
-						src=""
+						src="quizzPersonalizado/src/assets/images/woman/provasocial.jpg"
 						alt="Eliana Suzane da Costa"
 						className="rounded-full w-10 h-10 border border-red-700"
 					/>

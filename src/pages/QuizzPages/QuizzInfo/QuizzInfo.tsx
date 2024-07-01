@@ -12,7 +12,7 @@ type Props = {
 const QuizzInfo = ({ currentQuestion, handleNextQuestion }: Props) => {
 
 	useEffect(() => {
-		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion}`);
+		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion.order}`);
 	}, [currentQuestion]);
 
 	return (
