@@ -216,9 +216,11 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 				</div>
 
 				<div className="text-center mt-3 mb-10">
-					<button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
-						OBTER MEU PLANO
-					</button>
+					<a href="https://pay.kiwify.com.br/bLyc8oZ">
+						<button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
+							OBTER MEU PLANO
+						</button>
+					</a>
 				</div>
 			</div>
 
@@ -256,9 +258,11 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 					</div>
 				</Carousel>
 				<div className="text-center mt-6">
-					<button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
-						OBTER MEU PLANO
-					</button>
+					<a href="https://pay.kiwify.com.br/bLyc8oZ">
+						<button className="bg-red-500 text-white py-4 px-20 mt-5 rounded-full animate-pulse">
+							OBTER MEU PLANO
+						</button>
+					</a>
 				</div>
 			</div>
 

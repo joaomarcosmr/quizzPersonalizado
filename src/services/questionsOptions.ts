@@ -161,10 +161,6 @@ export const questionOptions: Question[] = [
         image: "../src/assets/images/sorrisoEmoji.webp",
         text: "Acho que não",
       },
-      {
-        image: "../src/assets/images/okEmoji.webp",
-        text: "De jeito nenhum",
-      },
     ],
   },
   {
@@ -194,6 +190,7 @@ export const questionOptions: Question[] = [
         image: "../src/assets/images/terra-noticia.png",
         title: "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
         description1: "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
+				description2: "Com apenas 10 minutos ao dia, você mantém uma dieta livre para comer o que quiser e ainda consegue emagrecer."
       },
     ],
   },
@@ -363,11 +360,7 @@ export const questionOptions: Question[] = [
       {
         image: "../src/assets/images/strongEmoji.webp",
         text: "Brincar com os filhos",
-      },
-      {
-        image: "../src/assets/images/appleEmoji.webp",
-        text: "Viajar e explorar",
-      },
+      }
     ],
   },
   {
