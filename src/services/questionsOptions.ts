@@ -27,7 +27,7 @@ import fogueteEmoji from "../assets/images/fogueteEmoji.webp";
 import terraNoticiaImage from "../assets/images/terra-noticia.png";
 import sorrisoPreocupadoEmoji from "../assets/images/sorrisoPreocupadoEmoji.webp";
 import escaladaEmoji from "../assets/images/escaladaEmoji.webp";
-import dedoPraCimaEmoji from "../assets/images/dedoPraCimaEmoji.webp";
+// import dedoPraCimaEmoji from "../assets/images/dedoPraCimaEmoji.webp";
 import netflix from "../assets/images/netflix.webp";
 import pensativoEmoji from "../assets/images/pensativoEmoji.webp";
 
