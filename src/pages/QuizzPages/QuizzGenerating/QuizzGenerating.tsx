@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ReactPixel from 'react-facebook-pixel';
+import provasocial from "../../../assets/images/provasocial.jpg"
 
 type Props = {
 	handleNextQuestion: () => void;
@@ -76,7 +77,7 @@ const QuizzGenerating = ({ handleNextQuestion }: Props) => {
 			>
 				<div className="flex items-center gap-2">
 					<img
-						src="src/assets/images/woman/provasocial.jpg"
+						src={provasocial}
 						alt="Eliana Suzane da Costa"
 						className="rounded-full w-10 h-10 border border-red-700"
 					/>

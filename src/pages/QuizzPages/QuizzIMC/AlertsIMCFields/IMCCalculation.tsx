@@ -2,6 +2,10 @@ import { faWeight } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { IBodyImage } from '../../../../interface/bodyImage';
+import magra from "../../../../assets/images/woman/results/magra.webp"
+import normal from "../../../../assets/images/woman/results/normal.webp"
+import sobrepeso from "../../../../assets/images/woman/results/sobrepeso.webp"
+import obesa from "../../../../assets/images/woman/results/obesa.webp"
 
 type Props = {
 	IMC: number;
@@ -15,31 +19,31 @@ const IMCCalculation = ({ IMC, setBodyImage }: Props) => {
 		if (IMC < 18.5) {
 			setStatus("MAGREZA");
 			setBodyImage({
-				image: "src/assets/images/woman/results/magra.webp",
+				image: magra,
 				alt: "magra"
 			})
 		} else if (IMC >= 18.5 && IMC < 25) {
 			setStatus("NORMAL");
 			setBodyImage({
-				image: "src/assets/images/woman/results/normal.webp",
+				image: normal,
 				alt: "normal"
 			})
 		} else if (IMC >= 25 && IMC < 30) {
 			setStatus("SOBREPESO");
 			setBodyImage({
-				image: "src/assets/images/woman/results/sobrepeso.webp",
+				image: sobrepeso,
 				alt: "sobrepeso"
 			})
 		} else if (IMC >= 30 && IMC < 40) {
 			setStatus("OBESIDADE");
 			setBodyImage({
-				image: "src/assets/images/woman/results/obesa.webp",
+				image: obesa,
 				alt: "obesa"
 			})
 		} else {
 			setStatus("OBESIDADE GRAVE");
 			setBodyImage({
-				image: "src/assets/images/woman/results/obesa.webp",
+				image: obesa,
 				alt: "obesa"
 			})
 		}

@@ -10,6 +10,11 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { IAnswers } from '../../../interface/personalizedAnswers';
 import ReactPixel from 'react-facebook-pixel';
+import forte from "../../../assets/images/woman/results/forte.webp"
+import normal from "../../../assets/images/woman/results/normal.webp"
+import goal from "../../../assets/images/seta.png"
+import provaSocial1 from "../../../assets/images/antesEDepois1.png"
+import provaSocial2 from "../../../assets/images/antesEDepois2.png"
 
 type Props = {
 	personalizedAnswers: IAnswers;
@@ -74,13 +79,13 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 					</div>
 
 					<div className="m-2">
-						<img src="src/assets/images/seta.png" alt="goal" className='w-12 h-24' />
+						<img src={goal} alt="goal" className='w-12 h-24' />
 					</div>
 
 					<div className="text-center md:mb-0">
 						<span className="block text-gray-500 mb-2">Sua meta</span>
 						<img
-							src={personalizedAnswers?.bodyImage?.alt !== 'obeso' ? "src/assets/images/woman/results/forte.webp" : "src/assets/images/woman/results/normal.webp"}
+							src={personalizedAnswers?.bodyImage?.alt !== 'obeso' ? forte : normal}
 							alt="Goal Body"
 							className="w-48 mx-auto"
 						/>
@@ -242,7 +247,7 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 				>
 					<div>
 						<img
-							src="src/assets/images/antesEDepois1.png"
+							src={provaSocial1}
 							alt="Testimonial 1"
 						/>
 						<p className="mb-2">Joana, -8 kg no primeiro mes</p>
@@ -252,7 +257,7 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 					</div>
 					<div>
 						<img
-							src="src/assets/images/antesEDepois2.png"
+							src={provaSocial2}
 							alt="Testimonial 2"
 						/>
 						<p className="mb-2">Katarine Ramos, -6 kg no primeiro mes</p>
