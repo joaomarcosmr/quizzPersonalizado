@@ -13,6 +13,7 @@ import mulher50plus from "../assets/images/woman/50+.webp";
 import inicialImage from "../assets/images/inicial.png";
 import cansadoEmoji from "../assets/images/cansadoEmoji.webp";
 import tedioEmoji from "../assets/images/tedioEmoji.webp";
+import pizzaEmoji from "../assets/images/pizzaEmoji.webp";
 import sorrisoEmoji from "../assets/images/sorrisoEmoji.webp";
 import sorrisoOculosEmoji from "../assets/images/sorrisoOculosEmoji.webp";
 import fireEmoji from "../assets/images/fireEmoji.webp";
@@ -26,6 +27,8 @@ import fogueteEmoji from "../assets/images/fogueteEmoji.webp";
 import terraNoticiaImage from "../assets/images/terra-noticia.png";
 import sorrisoPreocupadoEmoji from "../assets/images/sorrisoPreocupadoEmoji.webp";
 import escaladaEmoji from "../assets/images/escaladaEmoji.webp";
+import dedoPraCimaEmoji from "../assets/images/dedoPraCimaEmoji.webp";
+import netflix from "../assets/images/netflix.webp";
 import pensativoEmoji from "../assets/images/pensativoEmoji.webp";
 
 export const questionOptions: Question[] = [
@@ -76,7 +79,8 @@ export const questionOptions: Question[] = [
   },
   {
     order: 5,
-    question: "O que você acha que precisaria mudar para alcançar seu peso ideal?",
+    question:
+      "O que você acha que precisaria mudar para alcançar seu peso ideal?",
     type: "classic",
     options: [
       { image: appleEmoji, text: "Dieta" },
@@ -87,7 +91,23 @@ export const questionOptions: Question[] = [
   },
   {
     order: 6,
-    question: "Você já tentou alguma dieta que não deu certo e acabou se frustrando?",
+    type: "info",
+    info: [
+      {
+        image: netflix,
+        title:
+          "Queimar calorias é a chave do emagrecimento!",
+        description1:
+          "Mas, e se desse pra fazer apenas 10 minutos de exercício que fariam seu corpo queimar calorias por mais de 24 horas?.",
+        description2:
+          "Enquanto você assiste filme, pode estar queimando calorias, vamos te mostrar na sequência como fazer isso.",
+      },
+    ],
+  },
+  {
+    order: 7,
+    question:
+      "Você já tentou alguma dieta que não deu certo e acabou se frustrando?",
     type: "classic",
     options: [
       { image: cansado2Emoji, text: "Sim, várias vezes" },
@@ -97,8 +117,9 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 7,
-    question: "Quais são os maiores obstáculos que você enfrenta para atingir seu peso desejado?",
+    order: 8,
+    question:
+      "Quais são os maiores obstáculos que você enfrenta para atingir seu peso desejado?",
     type: "classic",
     options: [
       { image: fireEmoji, text: "Falta de tempo" },
@@ -108,7 +129,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 8,
+    order: 9,
     question: "Você acha que consegue emagrecer com poucos exercicios?",
     type: "classic",
     options: [
@@ -118,8 +139,9 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 9,
-    question: "Se houvesse uma maneira eficaz de perder peso, você estaria disposta a tentar?",
+    order: 10,
+    question:
+      "Se houvesse uma maneira eficaz de perder peso, você estaria disposta a tentar?",
     type: "classic",
     options: [
       { image: fireEmoji, text: "Sim, estou pronta" },
@@ -128,12 +150,13 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 10,
+    order: 11,
     type: "info",
     info: [
       {
         image: terraNoticiaImage,
-        title: "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
+        title:
+          "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
         description1:
           "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
         description2:
@@ -142,7 +165,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 11,
+    order: 12,
     question: "Como você descreveria sua realidade?",
     type: "classic",
     options: [
@@ -152,7 +175,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 12,
+    order: 13,
     question: "Como você descreveria seu nível de metabolismo?",
     name: "metabolism",
     save: true,
@@ -164,7 +187,7 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 13,
+    order: 14,
     question: "Você se movimenta bastante durante seu dia?",
     name: "lifestyle",
     save: true,
@@ -176,24 +199,15 @@ export const questionOptions: Question[] = [
     ],
   },
   {
-    order: 14,
+    order: 15,
     question: "Você se alimenta de maneira saudável?",
     name: "fitnessLevel",
     save: true,
     type: "classic",
     options: [
-      { image: fireEmoji, text: FitnessLevel.Bad },
-      { image: hangLoseEmoji, text: FitnessLevel.Normal },
-      { image: strongEmoji, text: FitnessLevel.Good },
-    ],
-  },
-  {
-    order: 15,
-    question: "Você tem algum problema de saúde que possa afetar seu peso?",
-    type: "classic",
-    options: [
-      { image: fireEmoji, text: "Sim" },
-      { image: hangLoseEmoji, text: "Não" },
+      { image: pizzaEmoji, text: FitnessLevel.Bad },
+      { image: appleEmoji, text: FitnessLevel.Normal },
+      { image: saladaEmoji, text: FitnessLevel.Good },
     ],
   },
   {
@@ -248,7 +262,8 @@ export const questionOptions: Question[] = [
   },
   {
     order: 22,
-    question: "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
+    question:
+      "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
     type: "classic",
     options: [
       { image: fireEmoji, text: "Esportes" },
@@ -258,7 +273,8 @@ export const questionOptions: Question[] = [
   },
   {
     order: 23,
-    question: "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
+    question:
+      "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
     type: "classic",
     options: [
       { image: fireEmoji, text: "Muito mais ativa e saudável" },
