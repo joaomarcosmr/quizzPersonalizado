@@ -6,28 +6,36 @@ import {
 } from "../interface/personalizedAnswers";
 import { IMCType, Question } from "../interface/questions";
 
+import mulher1829 from "../assets/images/woman/1829.webp";
+import mulher3039 from "../assets/images/woman/3039.webp";
+import mulher4049 from "../assets/images/woman/4049.webp";
+import mulher50plus from "../assets/images/woman/50+.webp";
+import inicialImage from "../assets/images/inicial.png";
+import cansadoEmoji from "../assets/images/cansadoEmoji.webp";
+import tedioEmoji from "../assets/images/tedioEmoji.webp";
+import sorrisoEmoji from "../assets/images/sorrisoEmoji.webp";
+import sorrisoOculosEmoji from "../assets/images/sorrisoOculosEmoji.webp";
+import fireEmoji from "../assets/images/fireEmoji.webp";
+import hangLoseEmoji from "../assets/images/hangLoseEmoji.webp";
+import strongEmoji from "../assets/images/strongEmoji.webp";
+import appleEmoji from "../assets/images/appleEmoji.webp";
+import cansado2Emoji from "../assets/images/cansado2Emoji.webp";
+import envergonhadoEmoji from "../assets/images/envergonhadoEmoji.webp";
+import saladaEmoji from "../assets/images/saladaEmoji.webp";
+import fogueteEmoji from "../assets/images/fogueteEmoji.webp";
+import terraNoticiaImage from "../assets/images/terra-noticia.png";
+import sorrisoPreocupadoEmoji from "../assets/images/sorrisoPreocupadoEmoji.webp";
+
 export const questionOptions: Question[] = [
   {
     order: 1,
     question: "Seu plano personalizado em 1 minuto",
     type: "start",
     options: [
-      {
-        image: "src/assets/images/woman/1829.webp",
-        text: "18 a 24",
-      },
-      {
-        image: "src/assets/images/woman/3039.webp",
-        text: "25 a 34",
-      },
-      {
-        image: "src/assets/images/woman/4049.webp",
-        text: "35 a 44",
-      },
-      {
-        image: "src/assets/images/woman/50+.webp",
-        text: "45+",
-      },
+      { image: mulher1829, text: "18 a 24" },
+      { image: mulher3039, text: "25 a 34" },
+      { image: mulher4049, text: "35 a 44" },
+      { image: mulher50plus, text: "45+" },
     ],
   },
   {
@@ -35,9 +43,10 @@ export const questionOptions: Question[] = [
     type: "info",
     info: [
       {
-        image: "src/assets/images/inicial.png",
+        image: inicialImage,
         title: "Pilates na Parede",
-        description1: "Mais de 3435 mulheres estão queimando gorduras com esses exercícios.",
+        description1:
+          "Mais de 3435 mulheres estão queimando gorduras com esses exercícios.",
       },
     ],
   },
@@ -46,22 +55,10 @@ export const questionOptions: Question[] = [
     question: "Como você se sente em relação ao seu peso atual?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/cansadoEmoji.webp",
-        text: "Triste e desmotivada",
-      },
-      {
-        image: "src/assets/images/tedioEmoji.webp",
-        text: "Indiferente",
-      },
-      {
-        image: "src/assets/images/sorrisoEmoji.webp",
-        text: "Motivada a melhorar",
-      },
-      {
-        image: "src/assets/images/sorrisoOculosEmoji.webp",
-        text: "Feliz e confiante",
-      },
+      { image: cansadoEmoji, text: "Triste e desmotivada" },
+      { image: tedioEmoji, text: "Indiferente" },
+      { image: sorrisoEmoji, text: "Motivada a melhorar" },
+      { image: sorrisoOculosEmoji, text: "Feliz e confiante" },
     ],
   },
   {
@@ -69,13 +66,10 @@ export const questionOptions: Question[] = [
     question: "Você sente que seu peso atual limita suas atividades diárias?",
     type: "classic",
     options: [
-      { image: "src/assets/images/fireEmoji.webp", text: "Sim, bastante" },
-      { image: "src/assets/images/hangLoseEmoji.webp", text: "Um pouco" },
-      { image: "src/assets/images/strongEmoji.webp", text: "Não muito" },
-      {
-        image: "src/assets/images/appleEmoji.webp",
-        text: "De jeito nenhum",
-      },
+      { image: fireEmoji, text: "Sim, bastante" },
+      { image: hangLoseEmoji, text: "Um pouco" },
+      { image: strongEmoji, text: "Não muito" },
+      { image: appleEmoji, text: "De jeito nenhum" },
     ],
   },
   {
@@ -83,19 +77,10 @@ export const questionOptions: Question[] = [
     question: "O que você acha que precisaria mudar para alcançar seu peso ideal?",
     type: "classic",
     options: [
-      { image: "src/assets/images/appleEmoji.webp", text: "Dieta" },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: "Exercícios",
-      },
-      {
-        image: "src/assets/images/familiaEmoji.webp",
-        text: "Hábitos diários",
-      },
-      {
-        image: "src/assets/images/envergonhadoEmoji.webp",
-        text: "Tudo isso junto",
-      },
+      { image: appleEmoji, text: "Dieta" },
+      { image: strongEmoji, text: "Exercícios" },
+      { image: saladaEmoji, text: "Hábitos diários" },
+      { image: envergonhadoEmoji, text: "Tudo isso junto" },
     ],
   },
   {
@@ -103,22 +88,10 @@ export const questionOptions: Question[] = [
     question: "Você já tentou alguma dieta que não deu certo e acabou se frustrando?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/cansado2Emoji.webp",
-        text: "Sim, várias vezes",
-      },
-      {
-        image: "src/assets/images/cansadoEmoji.webp",
-        text: "Sim, uma vez",
-      },
-      {
-        image: "src/assets/images/sorrisoEmoji.webp",
-        text: "Não, nunca tentei dieta",
-      },
-      {
-        image: "src/assets/images/sorrisoOculosEmoji.webp",
-        text: "Nunca me frustrei com dietas",
-      },
+      { image: cansado2Emoji, text: "Sim, várias vezes" },
+      { image: cansadoEmoji, text: "Sim, uma vez" },
+      { image: sorrisoEmoji, text: "Não, nunca tentei dieta" },
+      { image: sorrisoOculosEmoji, text: "Nunca me frustrei com dietas" },
     ],
   },
   {
@@ -126,22 +99,10 @@ export const questionOptions: Question[] = [
     question: "Quais são os maiores obstáculos que você enfrenta para atingir seu peso desejado?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: "Falta de tempo",
-      },
-      {
-        image: "src/assets/images/tedioEmoji.webp",
-        text: "Falta de motivação",
-      },
-      {
-        image: "src/assets/images/saladaEmoji.webp",
-        text: "Hábitos alimentares",
-      },
-      {
-        image: "src/assets/images/appleEmoji.webp",
-        text: "Falta de conhecimento",
-      },
+      { image: fireEmoji, text: "Falta de tempo" },
+      { image: tedioEmoji, text: "Falta de motivação" },
+      { image: saladaEmoji, text: "Hábitos alimentares" },
+      { image: appleEmoji, text: "Falta de conhecimento" },
     ],
   },
   {
@@ -149,18 +110,9 @@ export const questionOptions: Question[] = [
     question: "Você acha que o seu peso atual pode estar afetando sua saúde?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/cansado2Emoji.webp",
-        text: "Sim, definitivamente",
-      },
-      {
-        image: "src/assets/images/cansadoEmoji.webp",
-        text: "Talvez um pouco",
-      },
-      {
-        image: "src/assets/images/sorrisoEmoji.webp",
-        text: "Acho que não",
-      },
+      { image: cansado2Emoji, text: "Sim, definitivamente" },
+      { image: cansadoEmoji, text: "Talvez um pouco" },
+      { image: sorrisoEmoji, text: "Acho que não" },
     ],
   },
   {
@@ -168,18 +120,9 @@ export const questionOptions: Question[] = [
     question: "Se houvesse uma maneira eficaz de perder peso, você estaria disposta a tentar?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: "Sim, estou pronta",
-      },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: "Talvez, dependendo da solução",
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: "Estou um pouco cética",
-      },
+      { image: fireEmoji, text: "Sim, estou pronta" },
+      { image: hangLoseEmoji, text: "Talvez, dependendo da solução" },
+      { image: strongEmoji, text: "Estou um pouco cética" },
     ],
   },
   {
@@ -187,10 +130,12 @@ export const questionOptions: Question[] = [
     type: "info",
     info: [
       {
-        image: "src/assets/images/terra-noticia.png",
+        image: terraNoticiaImage,
         title: "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
-        description1: "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
-        description2: "Com apenas 10 minutos ao dia, você mantém uma dieta livre para comer o que quiser e ainda consegue emagrecer."
+        description1:
+          "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
+        description2:
+          "Com apenas 10 minutos ao dia, você mantém uma dieta livre para comer o que quiser e ainda consegue emagrecer.",
       },
     ],
   },
@@ -199,18 +144,9 @@ export const questionOptions: Question[] = [
     question: "Como você descreveria sua realidade?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/sorrisoPreocupadoEmoji.webp",
-        text: Biotype.Ectomorph,
-      },
-      {
-        image: "src/assets/images/tedioEmoji.webp",
-        text: Biotype.Mesomorph,
-      },
-      {
-        image: "src/assets/images/envergonhadoEmoji.webp",
-        text: Biotype.Endomorph,
-      },
+      { image: sorrisoPreocupadoEmoji, text: Biotype.Ectomorph },
+      { image: tedioEmoji, text: Biotype.Mesomorph },
+      { image: envergonhadoEmoji, text: Biotype.Endomorph },
     ],
   },
   {
@@ -220,18 +156,9 @@ export const questionOptions: Question[] = [
     save: true,
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fogueteEmoji.webp",
-        text: Metabolism.Fast,
-      },
-      {
-        image: "src/assets/images/sorrisoPreocupadoEmoji.webp",
-        text: Metabolism.Average,
-      },
-      {
-        image: "src/assets/images/cansado2Emoji.webp",
-        text: Metabolism.Slow,
-      },
+      { image: fogueteEmoji, text: Metabolism.Fast },
+      { image: sorrisoPreocupadoEmoji, text: Metabolism.Average },
+      { image: cansado2Emoji, text: Metabolism.Slow },
     ],
   },
   {
@@ -241,18 +168,9 @@ export const questionOptions: Question[] = [
     save: true,
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: Lifestyle.Active,
-      },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: Lifestyle.Normal,
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: Lifestyle.Sedentary,
-      },
+      { image: fireEmoji, text: Lifestyle.Active },
+      { image: hangLoseEmoji, text: Lifestyle.Normal },
+      { image: strongEmoji, text: Lifestyle.Sedentary },
     ],
   },
   {
@@ -262,18 +180,9 @@ export const questionOptions: Question[] = [
     save: true,
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: FitnessLevel.Bad,
-      },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: FitnessLevel.Normal,
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: FitnessLevel.Good,
-      },
+      { image: fireEmoji, text: FitnessLevel.Bad },
+      { image: hangLoseEmoji, text: FitnessLevel.Normal },
+      { image: strongEmoji, text: FitnessLevel.Good },
     ],
   },
   {
@@ -281,8 +190,8 @@ export const questionOptions: Question[] = [
     question: "Você tem algum problema de saúde que possa afetar seu peso?",
     type: "classic",
     options: [
-      { image: "src/assets/images/fireEmoji.webp", text: "Sim" },
-      { image: "src/assets/images/hangLoseEmoji.webp", text: "Não" },
+      { image: fireEmoji, text: "Sim" },
+      { image: hangLoseEmoji, text: "Não" },
     ],
   },
   {
@@ -329,22 +238,10 @@ export const questionOptions: Question[] = [
     question: "Como você se sentiria ao atingir seu peso ideal?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: "Extremamente feliz e confiante",
-      },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: "Mais saudável e ativa",
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: "Satisfeita e motivada",
-      },
-      {
-        image: "src/assets/images/appleEmoji.webp",
-        text: "Um pouco melhor do que agora",
-      },
+      { image: fireEmoji, text: "Extremamente feliz e confiante" },
+      { image: hangLoseEmoji, text: "Mais saudável e ativa" },
+      { image: strongEmoji, text: "Satisfeita e motivada" },
+      { image: appleEmoji, text: "Um pouco melhor do que agora" },
     ],
   },
   {
@@ -352,15 +249,9 @@ export const questionOptions: Question[] = [
     question: "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
     type: "classic",
     options: [
-      { image: "src/assets/images/fireEmoji.webp", text: "Esportes" },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: "Caminhadas longas",
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: "Brincar com os filhos",
-      }
+      { image: fireEmoji, text: "Esportes" },
+      { image: hangLoseEmoji, text: "Caminhadas longas" },
+      { image: strongEmoji, text: "Brincar com os filhos" },
     ],
   },
   {
@@ -368,18 +259,9 @@ export const questionOptions: Question[] = [
     question: "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: "Muito mais ativa e saudável",
-      },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: "Mais equilibrado e consciente",
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: "Mais confiante e social",
-      },
+      { image: fireEmoji, text: "Muito mais ativa e saudável" },
+      { image: hangLoseEmoji, text: "Mais equilibrado e consciente" },
+      { image: strongEmoji, text: "Mais confiante e social" },
     ],
   },
   {
@@ -387,35 +269,25 @@ export const questionOptions: Question[] = [
     question: "Quais benefícios você espera obter ao alcançar seu peso ideal?",
     type: "classic",
     options: [
-      {
-        image: "src/assets/images/fireEmoji.webp",
-        text: "Melhorar a autoestima",
-      },
-      {
-        image: "src/assets/images/hangLoseEmoji.webp",
-        text: "Reduzir riscos de saúde",
-      },
-      {
-        image: "src/assets/images/strongEmoji.webp",
-        text: "Aumentar a energia",
-      },
-      {
-        image: "src/assets/images/appleEmoji.webp",
-        text: "Melhorar a qualidade de vida",
-      },
+      { image: fireEmoji, text: "Melhorar a autoestima" },
+      { image: hangLoseEmoji, text: "Reduzir riscos de saúde" },
+      { image: strongEmoji, text: "Aumentar a energia" },
+      { image: appleEmoji, text: "Melhorar a qualidade de vida" },
     ],
   },
   {
     order: 25,
     type: "results-chart-promises",
   },
-	{
-		order: 26,
-		type: "awaiting"
-	},
+  {
+    order: 26,
+    type: "awaiting",
+  },
   {
     order: 27,
     question: "Seu plano personalizado em 1 minuto",
     type: "landingPage",
   },
 ];
+
+export default questionOptions;
