@@ -25,6 +25,8 @@ import saladaEmoji from "../assets/images/saladaEmoji.webp";
 import fogueteEmoji from "../assets/images/fogueteEmoji.webp";
 import terraNoticiaImage from "../assets/images/terra-noticia.png";
 import sorrisoPreocupadoEmoji from "../assets/images/sorrisoPreocupadoEmoji.webp";
+import escaladaEmoji from "../assets/images/escaladaEmoji.webp";
+import pensativoEmoji from "../assets/images/pensativoEmoji.webp";
 
 export const questionOptions: Question[] = [
   {
@@ -107,12 +109,12 @@ export const questionOptions: Question[] = [
   },
   {
     order: 8,
-    question: "Você acha que o seu peso atual pode estar afetando sua saúde?",
+    question: "Você acha que consegue emagrecer com poucos exercicios?",
     type: "classic",
     options: [
-      { image: cansado2Emoji, text: "Sim, definitivamente" },
-      { image: cansadoEmoji, text: "Talvez um pouco" },
-      { image: sorrisoEmoji, text: "Acho que não" },
+      { image: strongEmoji, text: "Sim, definitivamente" },
+      { image: pensativoEmoji, text: "Talvez um pouco" },
+      { image: tedioEmoji, text: "Acho que não" },
     ],
   },
   {
@@ -238,8 +240,8 @@ export const questionOptions: Question[] = [
     question: "Como você se sentiria ao atingir seu peso ideal?",
     type: "classic",
     options: [
-      { image: fireEmoji, text: "Extremamente feliz e confiante" },
-      { image: hangLoseEmoji, text: "Mais saudável e ativa" },
+      { image: sorrisoEmoji, text: "Extremamente feliz e confiante" },
+      { image: escaladaEmoji, text: "Mais saudável e ativa" },
       { image: strongEmoji, text: "Satisfeita e motivada" },
       { image: appleEmoji, text: "Um pouco melhor do que agora" },
     ],

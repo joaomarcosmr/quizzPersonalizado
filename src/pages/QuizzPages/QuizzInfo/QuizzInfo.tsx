@@ -19,7 +19,7 @@ const QuizzInfo = ({ currentQuestion, handleNextQuestion }: Props) => {
 		<section className="container flex flex-col items-center gap-5">
 			{currentQuestion?.info?.map((info, index) => (
 				<React.Fragment key={index}>
-					<div className="flex flex-col text-center gap-5 mt-3">
+					<div className="flex flex-col text-center w-80 gap-5 mt-3">
 						<h2 className="font-extrabold text-xl">{info?.title}</h2>
 						<p className="font-bold text-gray-500 text-md">
 							{info?.description1}
@@ -31,7 +31,7 @@ const QuizzInfo = ({ currentQuestion, handleNextQuestion }: Props) => {
 					</div>
 
 					{info?.description2 && (
-						<p className="font-medium text-gray-500 text-center text-md">
+						<p className="font-medium text-gray-500 text-center text-md w-80">
 							{info?.description2}
 						</p>
 					)}

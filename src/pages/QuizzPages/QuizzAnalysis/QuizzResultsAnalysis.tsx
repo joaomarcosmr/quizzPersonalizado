@@ -32,7 +32,7 @@ const QuizzResultsAnalysis = ({
 
 	const Imc = personalizedAnswers?.IMC!;
 	const [currentImcPosition, setCurrentImcPosition] = useState(0);
-	const ImcPosition = ((Imc - 12) / (45 - 12)) * 100;
+	const ImcPosition = ((Imc - 10) / (45 - 12)) * 100;
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -43,8 +43,8 @@ const QuizzResultsAnalysis = ({
 
 	return (
 		<section className="flex flex-col items-center justify-center mt-7 w-full h-full">
-			<div id="title" className="w-82">
-				<h2 className="text-2xl font-bold text-center">
+			<div id="title" className="w-80">
+				<h2 className="text-2xl font-bold text-center mb-2">
 					O seu relatório inicial está pronto, veja só!
 				</h2>
 				<h4 className="text-center">
