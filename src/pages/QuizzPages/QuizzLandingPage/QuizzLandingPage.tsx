@@ -2,7 +2,6 @@ import {
 	faBadgeCheck,
 	faClock,
 	faFire,
-	faGreaterThan,
 	faWeightScale,
 } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -86,7 +85,7 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 				<div className="flex bg-gray-200 p-2 md:flex-row justify-around items-center">
 					<div className="text-center mb-6 md:mb-0">
 						<p className="text-gray-700">Gordura Corporal</p>
-						<p className="text-xl font-bold mb-2">{personalizedAnswers.bodyImage.alt === "obesa" || personalizedAnswers.bodyImage.alt === "sobrepeso" ? "Alta" : "Normal"}</p>
+						<p className="text-xl font-bold mb-2">{personalizedAnswers?.bodyImage?.alt === "obesa" || personalizedAnswers?.bodyImage?.alt === "sobrepeso" ? "Alta" : "Normal"}</p>
 						<p className="text-gray-700">Vida saudável</p>
 						<p className="text-xl font-bold mb-4">Baixa</p>
 						<div className="flex justify-center space-x-2">

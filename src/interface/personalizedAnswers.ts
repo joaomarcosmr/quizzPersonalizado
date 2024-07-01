@@ -1,5 +1,4 @@
 import { IBodyImage } from './bodyImage';
-import { IMCType } from './questions';
 
 export enum Metabolism {
   Fast = "Muito rápido, não consigo ganhar peso",
@@ -26,16 +25,16 @@ export enum FitnessLevel {
 }
 
 export interface IAnswers {
-  IMC: IMCType;
-  age: number;
-  goalWeight: string;
-  height: number;
-  name: string;
-  targetWeight: number;
-  weight: number;
-  bodyImage: IBodyImage;
-  metabolism: Metabolism;
-  lifestyle: Lifestyle;
-  biotype: Biotype;
-  fitnessLevel: FitnessLevel;
+  IMC?: number;
+  age?: number;
+  goalWeight?: string;
+  height?: number;
+  name?: string;
+  targetWeight?: number;
+  weight?: number;
+  bodyImage?: IBodyImage;
+  metabolism?: Metabolism;
+  lifestyle?: Lifestyle;
+  biotype?: Biotype;
+  fitnessLevel?: FitnessLevel;
 }

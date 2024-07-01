@@ -9,7 +9,7 @@ import { IAnswers } from '../../../interface/personalizedAnswers';
 type Props = {
 	currentQuestion: Question;
 	handleNextQuestion: (option?: Option) => void;
-	setPersonalizedAnswers: React.Dispatch<React.SetStateAction<IAnswers[]>>;
+	setPersonalizedAnswers: React.Dispatch<React.SetStateAction<IAnswers>>;
 };
 
 const QuizzCalculation = ({
@@ -86,12 +86,13 @@ const QuizzCalculation = ({
 	};
 
 	const handleContinue = (): void => {
-		const inputField = document.getElementById(
-			"inputForms"
-		) as HTMLInputElement;
+		const inputField = document.getElementById("inputForms") as HTMLInputElement;
 		if (inputField) {
 			inputField.value = "";
 		}
+
+		// Calcula o IMC como número
+		const IMC: number = Number((weight / height ** 2).toFixed(2));
 
 		setPersonalizedAnswers((prevInfos) => ({
 			...prevInfos,
@@ -102,11 +103,12 @@ const QuizzCalculation = ({
 			targetWeight: targetWeight,
 			goalWeight: goalStatus === "Ganhar" ? "Ganhar peso" : "Perder peso",
 			IMC: IMC,
-			bodyImage: bodyImage
+			bodyImage: bodyImage !== null ? bodyImage : undefined, // Ajuste aqui
 		}));
 
 		handleNextQuestion();
 	};
+
 
 	return (
 		<section className="flex flex-col items-center justify-center mt-7 gap-6 w-full h-full">
@@ -132,7 +134,7 @@ const QuizzCalculation = ({
 						}
 						onChange={(e) => handleUserMeasures(e)}
 					/>
-					<span className="absolute bg-white right-2 top-10 transform -translate-y-1/2 font-bold text-2xl text-center">
+					<span className="absolute right-2 top-10 transform -translate-y-1/2 font-bold text-2xl text-center">
 						{currentQuestion?.calculation?.measure}
 					</span>
 				</div>
