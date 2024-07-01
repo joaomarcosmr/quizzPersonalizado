@@ -409,8 +409,12 @@ export const questionOptions: Question[] = [
     order: 25,
     type: "results-chart-promises",
   },
+	{
+		order: 26,
+		type: "awaiting"
+	},
   {
-    order: 26,
+    order: 27,
     question: "Seu plano personalizado em 1 minuto",
     type: "landingPage",
   },

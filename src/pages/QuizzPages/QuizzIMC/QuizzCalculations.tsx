@@ -1,10 +1,11 @@
 import { IMCType, Option, Question } from "../../../interface/questions";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import IMCCalculation from "./AlertsIMCFields/IMCCalculation";
 import IMCGoal from "./AlertsIMCFields/IMCGoal";
 import IMCInfo from "./AlertsIMCFields/IMCInfo";
 import { IBodyImage } from '../../../interface/bodyImage';
 import { IAnswers } from '../../../interface/personalizedAnswers';
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	currentQuestion: Question;
@@ -17,6 +18,11 @@ const QuizzCalculation = ({
 	handleNextQuestion,
 	setPersonalizedAnswers,
 }: Props) => {
+
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion}`);
+	}, [currentQuestion]);
+
 	const [name, setName] = useState<string>("");
 	const [height, setHeight] = useState<number>(0);
 	const [weight, setWeight] = useState<number>(0);

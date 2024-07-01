@@ -9,12 +9,17 @@ import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { IAnswers } from '../../../interface/personalizedAnswers';
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	personalizedAnswers: IAnswers;
 };
 
 const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-lp`);
+	}, []);
+
 	const [minutes, setMinutes] = useState(10);
 	const [seconds, setSeconds] = useState(0);
 

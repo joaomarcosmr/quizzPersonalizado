@@ -4,6 +4,7 @@ import { IAnswers } from "../../../interface/personalizedAnswers";
 import ChartComponent from "../../../components/ChartResults";
 import { useEffect, useState } from "react";
 import { months } from "../../../utils/months";
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	personalizedAnswers: IAnswers;
@@ -11,6 +12,10 @@ type Props = {
 };
 
 const QuizzChartPlan = ({ personalizedAnswers, handleNextQuestion }: Props) => {
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-grafico`);
+	}, []);
+
 	const [goalMonthAchieved, setGoalMonthAchieved] = useState("");
 	const [howManyMonthsNeedToAchieve, setHowManyMonthsNeedToAchieve] =
 		useState(0);

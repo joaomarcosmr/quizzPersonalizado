@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Question } from "../../../interface/questions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/pro-solid-svg-icons";
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	currentQuestion: Question;
@@ -9,6 +10,11 @@ type Props = {
 };
 
 const QuizzInfo = ({ currentQuestion, handleNextQuestion }: Props) => {
+
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion}`);
+	}, [currentQuestion]);
+
 	return (
 		<section className="container flex flex-col items-center gap-5">
 			{currentQuestion?.info?.map((info, index) => (

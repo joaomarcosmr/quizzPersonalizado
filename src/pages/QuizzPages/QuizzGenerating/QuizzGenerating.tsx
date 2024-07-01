@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	handleNextQuestion: () => void;
 }
 
 const QuizzGenerating = ({ handleNextQuestion }: Props) => {
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-loading`);
+	}, []);
+
 	const [percentage, setPercentage] = useState(0);
 
 	useEffect(() => {

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ReactPixel from 'react-facebook-pixel';
 import Header from "./components/Header";
 import QuizzQuestionMultiChoice from "./pages/QuizzPages/QuizzType/QuizzQuestionMultiChoice";
 import QuizzQuestionClassic from "./pages/QuizzPages/QuizzType/QuizzQuestionClassic";
@@ -19,6 +20,10 @@ function App() {
 	const [progressPercentage, setProgressPercentage] = useState<number>(5);
 	const [currentQuestionNumber, setCurrentQuestionNumber] = useState<number>(1);
 	const [personalizedAnswers, setPersonalizedAnswers] = useState<IAnswers>({})
+
+	useEffect(() => {
+		ReactPixel.init('487587577015592');
+	}, []);
 
 	const currentQuestion: Question | undefined = questionOptions.find(
 		(question) => question.order === currentQuestionNumber

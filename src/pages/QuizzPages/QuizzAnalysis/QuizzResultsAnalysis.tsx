@@ -14,6 +14,7 @@ import {
 	Lifestyle,
 	Metabolism,
 } from "../../../interface/personalizedAnswers";
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	personalizedAnswers: IAnswers;
@@ -24,6 +25,11 @@ const QuizzResultsAnalysis = ({
 	personalizedAnswers,
 	handleNextQuestion,
 }: Props) => {
+
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-analise`);
+	}, []);
+
 	const Imc = personalizedAnswers?.IMC!;
 	const [currentImcPosition, setCurrentImcPosition] = useState(0);
 	const ImcPosition = ((Imc - 12) / (45 - 12)) * 100;

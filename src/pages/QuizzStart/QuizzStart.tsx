@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { Option, Question } from "../../interface/questions";
+import ReactPixel from 'react-facebook-pixel';
 
 type Props = {
 	currentQuestion: Question;
@@ -6,6 +8,11 @@ type Props = {
 };
 
 const QuizzStart = ({ handleNextQuestion, currentQuestion }: Props) => {
+
+	useEffect(() => {
+		ReactPixel.trackSingle('487587577015592', `pagina-${currentQuestion}`);
+	}, [currentQuestion]);
+
 	return (
 		<section className="flex flex-col items-center justify-center mt-7 gap-6 w-full">
 			<section id="logoSection" className="mt-2">
