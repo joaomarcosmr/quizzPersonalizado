@@ -24,7 +24,7 @@ const QuizzResultsAnalysis = ({
 	personalizedAnswers,
 	handleNextQuestion,
 }: Props) => {
-	const Imc = parseFloat(personalizedAnswers?.IMC!);
+	const Imc = personalizedAnswers?.IMC!;
 	const [currentImcPosition, setCurrentImcPosition] = useState(0);
 	const ImcPosition = ((Imc - 12) / (45 - 12)) * 100;
 
