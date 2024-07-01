@@ -74,13 +74,13 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 					</div>
 
 					<div className="m-2">
-						<img src="quizzPersonalizado/src/assets/images/seta.png" alt="goal" className='w-12 h-24' />
+						<img src="src/assets/images/seta.png" alt="goal" className='w-12 h-24' />
 					</div>
 
 					<div className="text-center md:mb-0">
 						<span className="block text-gray-500 mb-2">Sua meta</span>
 						<img
-							src={personalizedAnswers?.bodyImage?.alt !== 'obeso' ? "quizzPersonalizado/src/assets/images/woman/results/forte.webp" : "quizzPersonalizado/src/assets/images/woman/results/normal.webp"}
+							src={personalizedAnswers?.bodyImage?.alt !== 'obeso' ? "src/assets/images/woman/results/forte.webp" : "src/assets/images/woman/results/normal.webp"}
 							alt="Goal Body"
 							className="w-48 mx-auto"
 						/>
@@ -242,7 +242,7 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 				>
 					<div>
 						<img
-							src="quizzPersonalizado/src/assets/images/antesEDepois1.png"
+							src="src/assets/images/antesEDepois1.png"
 							alt="Testimonial 1"
 						/>
 						<p className="mb-2">Joana, -8 kg no primeiro mes</p>
@@ -252,7 +252,7 @@ const QuizzLandingPage = ({ personalizedAnswers }: Props) => {
 					</div>
 					<div>
 						<img
-							src="quizzPersonalizado/src/assets/images/antesEDepois2.png"
+							src="src/assets/images/antesEDepois2.png"
 							alt="Testimonial 2"
 						/>
 						<p className="mb-2">Katarine Ramos, -6 kg no primeiro mes</p>

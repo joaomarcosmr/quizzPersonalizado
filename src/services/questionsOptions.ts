@@ -13,19 +13,19 @@ export const questionOptions: Question[] = [
     type: "start",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/woman/1829.webp",
+        image: "src/assets/images/woman/1829.webp",
         text: "18 a 24",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/woman/3039.webp",
+        image: "src/assets/images/woman/3039.webp",
         text: "25 a 34",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/woman/4049.webp",
+        image: "src/assets/images/woman/4049.webp",
         text: "35 a 44",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/woman/50+.webp",
+        image: "src/assets/images/woman/50+.webp",
         text: "45+",
       },
     ],
@@ -35,7 +35,7 @@ export const questionOptions: Question[] = [
     type: "info",
     info: [
       {
-        image: "quizzPersonalizado/src/assets/images/inicial.png",
+        image: "src/assets/images/inicial.png",
         title: "Pilates na Parede",
         description1: "Mais de 3435 mulheres estão queimando gorduras com esses exercícios.",
       },
@@ -47,19 +47,19 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/cansadoEmoji.webp",
+        image: "src/assets/images/cansadoEmoji.webp",
         text: "Triste e desmotivada",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/tedioEmoji.webp",
+        image: "src/assets/images/tedioEmoji.webp",
         text: "Indiferente",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoEmoji.webp",
+        image: "src/assets/images/sorrisoEmoji.webp",
         text: "Motivada a melhorar",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoOculosEmoji.webp",
+        image: "src/assets/images/sorrisoOculosEmoji.webp",
         text: "Feliz e confiante",
       },
     ],
@@ -69,11 +69,11 @@ export const questionOptions: Question[] = [
     question: "Você sente que seu peso atual limita suas atividades diárias?",
     type: "classic",
     options: [
-      { image: "quizzPersonalizado/src/assets/images/fireEmoji.webp", text: "Sim, bastante" },
-      { image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp", text: "Um pouco" },
-      { image: "quizzPersonalizado/src/assets/images/strongEmoji.webp", text: "Não muito" },
+      { image: "src/assets/images/fireEmoji.webp", text: "Sim, bastante" },
+      { image: "src/assets/images/hangLoseEmoji.webp", text: "Um pouco" },
+      { image: "src/assets/images/strongEmoji.webp", text: "Não muito" },
       {
-        image: "quizzPersonalizado/src/assets/images/appleEmoji.webp",
+        image: "src/assets/images/appleEmoji.webp",
         text: "De jeito nenhum",
       },
     ],
@@ -83,17 +83,17 @@ export const questionOptions: Question[] = [
     question: "O que você acha que precisaria mudar para alcançar seu peso ideal?",
     type: "classic",
     options: [
-      { image: "quizzPersonalizado/src/assets/images/appleEmoji.webp", text: "Dieta" },
+      { image: "src/assets/images/appleEmoji.webp", text: "Dieta" },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: "Exercícios",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/familiaEmoji.webp",
+        image: "src/assets/images/familiaEmoji.webp",
         text: "Hábitos diários",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/envergonhadoEmoji.webp",
+        image: "src/assets/images/envergonhadoEmoji.webp",
         text: "Tudo isso junto",
       },
     ],
@@ -104,19 +104,19 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/cansado2Emoji.webp",
+        image: "src/assets/images/cansado2Emoji.webp",
         text: "Sim, várias vezes",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/cansadoEmoji.webp",
+        image: "src/assets/images/cansadoEmoji.webp",
         text: "Sim, uma vez",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoEmoji.webp",
+        image: "src/assets/images/sorrisoEmoji.webp",
         text: "Não, nunca tentei dieta",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoOculosEmoji.webp",
+        image: "src/assets/images/sorrisoOculosEmoji.webp",
         text: "Nunca me frustrei com dietas",
       },
     ],
@@ -127,19 +127,19 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: "Falta de tempo",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/tedioEmoji.webp",
+        image: "src/assets/images/tedioEmoji.webp",
         text: "Falta de motivação",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/saladaEmoji.webp",
+        image: "src/assets/images/saladaEmoji.webp",
         text: "Hábitos alimentares",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/appleEmoji.webp",
+        image: "src/assets/images/appleEmoji.webp",
         text: "Falta de conhecimento",
       },
     ],
@@ -150,15 +150,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/cansado2Emoji.webp",
+        image: "src/assets/images/cansado2Emoji.webp",
         text: "Sim, definitivamente",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/cansadoEmoji.webp",
+        image: "src/assets/images/cansadoEmoji.webp",
         text: "Talvez um pouco",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoEmoji.webp",
+        image: "src/assets/images/sorrisoEmoji.webp",
         text: "Acho que não",
       },
     ],
@@ -169,15 +169,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: "Sim, estou pronta",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: "Talvez, dependendo da solução",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: "Estou um pouco cética",
       },
     ],
@@ -187,7 +187,7 @@ export const questionOptions: Question[] = [
     type: "info",
     info: [
       {
-        image: "quizzPersonalizado/src/assets/images/terra-noticia.png",
+        image: "src/assets/images/terra-noticia.png",
         title: "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
         description1: "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
         description2: "Com apenas 10 minutos ao dia, você mantém uma dieta livre para comer o que quiser e ainda consegue emagrecer."
@@ -200,15 +200,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoPreocupadoEmoji.webp",
+        image: "src/assets/images/sorrisoPreocupadoEmoji.webp",
         text: Biotype.Ectomorph,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/tedioEmoji.webp",
+        image: "src/assets/images/tedioEmoji.webp",
         text: Biotype.Mesomorph,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/envergonhadoEmoji.webp",
+        image: "src/assets/images/envergonhadoEmoji.webp",
         text: Biotype.Endomorph,
       },
     ],
@@ -221,15 +221,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fogueteEmoji.webp",
+        image: "src/assets/images/fogueteEmoji.webp",
         text: Metabolism.Fast,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/sorrisoPreocupadoEmoji.webp",
+        image: "src/assets/images/sorrisoPreocupadoEmoji.webp",
         text: Metabolism.Average,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/cansado2Emoji.webp",
+        image: "src/assets/images/cansado2Emoji.webp",
         text: Metabolism.Slow,
       },
     ],
@@ -242,15 +242,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: Lifestyle.Active,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: Lifestyle.Normal,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: Lifestyle.Sedentary,
       },
     ],
@@ -263,15 +263,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: FitnessLevel.Bad,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: FitnessLevel.Normal,
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: FitnessLevel.Good,
       },
     ],
@@ -281,8 +281,8 @@ export const questionOptions: Question[] = [
     question: "Você tem algum problema de saúde que possa afetar seu peso?",
     type: "classic",
     options: [
-      { image: "quizzPersonalizado/src/assets/images/fireEmoji.webp", text: "Sim" },
-      { image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp", text: "Não" },
+      { image: "src/assets/images/fireEmoji.webp", text: "Sim" },
+      { image: "src/assets/images/hangLoseEmoji.webp", text: "Não" },
     ],
   },
   {
@@ -330,19 +330,19 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: "Extremamente feliz e confiante",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: "Mais saudável e ativa",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: "Satisfeita e motivada",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/appleEmoji.webp",
+        image: "src/assets/images/appleEmoji.webp",
         text: "Um pouco melhor do que agora",
       },
     ],
@@ -352,13 +352,13 @@ export const questionOptions: Question[] = [
     question: "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
     type: "classic",
     options: [
-      { image: "quizzPersonalizado/src/assets/images/fireEmoji.webp", text: "Esportes" },
+      { image: "src/assets/images/fireEmoji.webp", text: "Esportes" },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: "Caminhadas longas",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: "Brincar com os filhos",
       }
     ],
@@ -369,15 +369,15 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: "Muito mais ativa e saudável",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: "Mais equilibrado e consciente",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: "Mais confiante e social",
       },
     ],
@@ -388,19 +388,19 @@ export const questionOptions: Question[] = [
     type: "classic",
     options: [
       {
-        image: "quizzPersonalizado/src/assets/images/fireEmoji.webp",
+        image: "src/assets/images/fireEmoji.webp",
         text: "Melhorar a autoestima",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/hangLoseEmoji.webp",
+        image: "src/assets/images/hangLoseEmoji.webp",
         text: "Reduzir riscos de saúde",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/strongEmoji.webp",
+        image: "src/assets/images/strongEmoji.webp",
         text: "Aumentar a energia",
       },
       {
-        image: "quizzPersonalizado/src/assets/images/appleEmoji.webp",
+        image: "src/assets/images/appleEmoji.webp",
         text: "Melhorar a qualidade de vida",
       },
     ],

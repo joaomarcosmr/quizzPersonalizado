@@ -16,7 +16,7 @@ const QuizzStart = ({ handleNextQuestion, currentQuestion }: Props) => {
 	return (
 		<section className="flex flex-col items-center justify-center mt-7 gap-6 w-full">
 			<section id="logoSection" className="mt-2">
-				<img src="quizzPersonalizado/src/assets/images/logo.png" alt="Logo" />
+				<img src="src/assets/images/logo.png" alt="Logo" />
 			</section>
 
 			<div id="title">

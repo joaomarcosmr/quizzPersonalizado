@@ -76,7 +76,7 @@ const QuizzGenerating = ({ handleNextQuestion }: Props) => {
 			>
 				<div className="flex items-center gap-2">
 					<img
-						src="quizzPersonalizado/src/assets/images/woman/provasocial.jpg"
+						src="src/assets/images/woman/provasocial.jpg"
 						alt="Eliana Suzane da Costa"
 						className="rounded-full w-10 h-10 border border-red-700"
 					/>

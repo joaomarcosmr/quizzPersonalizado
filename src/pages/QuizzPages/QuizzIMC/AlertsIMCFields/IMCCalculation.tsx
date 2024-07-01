@@ -15,31 +15,31 @@ const IMCCalculation = ({ IMC, setBodyImage }: Props) => {
 		if (IMC < 18.5) {
 			setStatus("MAGREZA");
 			setBodyImage({
-				image: "quizzPersonalizado/src/assets/images/woman/results/magra.webp",
+				image: "src/assets/images/woman/results/magra.webp",
 				alt: "magra"
 			})
 		} else if (IMC >= 18.5 && IMC < 25) {
 			setStatus("NORMAL");
 			setBodyImage({
-				image: "quizzPersonalizado/src/assets/images/woman/results/normal.webp",
+				image: "src/assets/images/woman/results/normal.webp",
 				alt: "normal"
 			})
 		} else if (IMC >= 25 && IMC < 30) {
 			setStatus("SOBREPESO");
 			setBodyImage({
-				image: "quizzPersonalizado/src/assets/images/woman/results/sobrepeso.webp",
+				image: "src/assets/images/woman/results/sobrepeso.webp",
 				alt: "sobrepeso"
 			})
 		} else if (IMC >= 30 && IMC < 40) {
 			setStatus("OBESIDADE");
 			setBodyImage({
-				image: "quizzPersonalizado/src/assets/images/woman/results/obesa.webp",
+				image: "src/assets/images/woman/results/obesa.webp",
 				alt: "obesa"
 			})
 		} else {
 			setStatus("OBESIDADE GRAVE");
 			setBodyImage({
-				image: "quizzPersonalizado/src/assets/images/woman/results/obesa.webp",
+				image: "src/assets/images/woman/results/obesa.webp",
 				alt: "obesa"
 			})
 		}
