@@ -27,20 +27,19 @@ import fogueteEmoji from "../assets/images/fogueteEmoji.webp";
 import terraNoticiaImage from "../assets/images/terra-noticia.png";
 import sorrisoPreocupadoEmoji from "../assets/images/sorrisoPreocupadoEmoji.webp";
 import escaladaEmoji from "../assets/images/escaladaEmoji.webp";
-// import dedoPraCimaEmoji from "../assets/images/dedoPraCimaEmoji.webp";
-import netflix from "../assets/images/netflix.webp";
+import dedoPraCimaEmoji from "../assets/images/dedoPraCimaEmoji.webp";
 import pensativoEmoji from "../assets/images/pensativoEmoji.webp";
 
 export const questionOptions: Question[] = [
   {
     order: 1,
-    question: "Seu plano personalizado em 1 minuto",
+    question: "Jejum intermitente para mulheres na menopausa",
     type: "start",
     options: [
-      { image: mulher1829, text: "18 a 24" },
-      { image: mulher3039, text: "25 a 34" },
-      { image: mulher4049, text: "35 a 44" },
-      { image: mulher50plus, text: "45+" },
+      { image: mulher1829, text: "45 a 50" }, // imagens do site
+      { image: mulher3039, text: "51 a 55" },
+      { image: mulher4049, text: "56 a 60" },
+      { image: mulher50plus, text: "61+" },
     ],
   },
   {
@@ -49,169 +48,371 @@ export const questionOptions: Question[] = [
     info: [
       {
         image: inicialImage,
-        title: "Pilates na Parede",
+        title: "Mais de 34 mil mulheres",
         description1:
-          "Mais de 3435 mulheres estão queimando gorduras com esses exercícios.",
+          "Conheceram esse método de jejum com esse aplicativo!",
       },
     ],
   },
   {
     order: 3,
-    question: "Como você se sente em relação ao seu peso atual?",
-    type: "classic",
+    question: "Qual é o seu objetivo?",
+    type: "multiChoice",
     options: [
-      { image: cansadoEmoji, text: "Triste e desmotivada" },
-      { image: tedioEmoji, text: "Indiferente" },
-      { image: sorrisoEmoji, text: "Motivada a melhorar" },
-      { image: sorrisoOculosEmoji, text: "Feliz e confiante" },
+      { image: cansadoEmoji, text: "Perder peso" },
+      { image: tedioEmoji, text: "Previnir problemas cardíacos" },
+      { image: sorrisoEmoji, text: "Definir e modelar o corpo" },
+      { image: sorrisoOculosEmoji, text: "Alíviar o estresse" },
     ],
   },
   {
     order: 4,
-    question: "Você sente que seu peso atual limita suas atividades diárias?",
+    question: "Escolha o seu tipo de corpo",
     type: "classic",
     options: [
-      { image: fireEmoji, text: "Sim, bastante" },
-      { image: hangLoseEmoji, text: "Um pouco" },
-      { image: strongEmoji, text: "Não muito" },
-      { image: appleEmoji, text: "De jeito nenhum" },
+      { image: fireEmoji, text: "Médio" },
+      { image: hangLoseEmoji, text: "Flácido" },
+      { image: strongEmoji, text: "Quilinhos extras" },
     ],
   },
   {
     order: 5,
     question:
-      "O que você acha que precisaria mudar para alcançar seu peso ideal?",
+      "Escolha o tipo de corpo que você deseja ter",
     type: "classic",
     options: [
-      { image: appleEmoji, text: "Dieta" },
-      { image: strongEmoji, text: "Exercícios" },
-      { image: saladaEmoji, text: "Hábitos diários" },
-      { image: envergonhadoEmoji, text: "Tudo isso junto" },
+      { image: appleEmoji, text: "Em forma" },
+      { image: strongEmoji, text: "Atlético" },
+      { image: saladaEmoji, text: "Definido" },
     ],
   },
   {
     order: 6,
-    type: "info",
-    info: [
-      {
-        image: netflix,
-        title:
-          "Queimar calorias é a chave do emagrecimento!",
-        description1:
-          "Mas, e se desse pra fazer apenas 10 minutos de exercício que fariam seu corpo queimar calorias por mais de 24 horas?.",
-        description2:
-          "Enquanto você assiste filme, pode estar queimando calorias, vamos te mostrar na sequência como fazer isso.",
-      },
+    question:
+      "Escolha as áreas que você quer focar",
+    type: "classic",
+    options: [
+      { image: cansado2Emoji, text: "Diminuir abdômen" },
+      { image: cansadoEmoji, text: "Glúteos" },
+      { image: sorrisoEmoji, text: "Seios" },
+      { image: sorrisoOculosEmoji, text: "Pernas" },
     ],
   },
   {
     order: 7,
     question:
-      "Você já tentou alguma dieta que não deu certo e acabou se frustrando?",
+      "Qual foi a última vez que você ficou feliz com o seu peso?",
     type: "classic",
     options: [
-      { image: cansado2Emoji, text: "Sim, várias vezes" },
-      { image: cansadoEmoji, text: "Sim, uma vez" },
-      { image: sorrisoEmoji, text: "Não, nunca tentei dieta" },
-      { image: sorrisoOculosEmoji, text: "Nunca me frustrei com dietas" },
+      { image: fireEmoji, text: "Menos de um ano atrás" },
+      { image: tedioEmoji, text: "1 ou 2 anos atrás" },
+      { image: saladaEmoji, text: "Mais de 3 anos atrás" },
+      { image: appleEmoji, text: "Nunca" },
     ],
   },
   {
     order: 8,
-    question:
-      "Quais são os maiores obstáculos que você enfrenta para atingir seu peso desejado?",
-    type: "classic",
+    question: "Como a menopausa afetou o seu peso?",
+    type: "multiChoice",
     options: [
-      { image: fireEmoji, text: "Falta de tempo" },
-      { image: tedioEmoji, text: "Falta de motivação" },
-      { image: saladaEmoji, text: "Hábitos alimentares" },
-      { image: appleEmoji, text: "Falta de conhecimento" },
+      { image: strongEmoji, text: "Reducao do metabolismo" },
+      { image: pensativoEmoji, text: "Aumento do apetite e desejos por comida gordurosa" },
+      { image: tedioEmoji, text: "Ganho de peso apesar dos hábitos saudáveis" },
+      { image: tedioEmoji, text: "Sem alteracoes significativas" },
+      { image: tedioEmoji, text: "Não sei" },
     ],
   },
   {
     order: 9,
-    question: "Você acha que consegue emagrecer com poucos exercicios?",
-    type: "classic",
-    options: [
-      { image: strongEmoji, text: "Sim, definitivamente" },
-      { image: pensativoEmoji, text: "Talvez um pouco" },
-      { image: tedioEmoji, text: "Acho que não" },
-    ],
-  },
-  {
-    order: 10,
-    question:
-      "Se houvesse uma maneira eficaz de perder peso, você estaria disposta a tentar?",
-    type: "classic",
-    options: [
-      { image: fireEmoji, text: "Sim, estou pronta" },
-      { image: hangLoseEmoji, text: "Talvez, dependendo da solução" },
-      { image: strongEmoji, text: "Estou um pouco cética" },
-    ],
-  },
-  {
-    order: 11,
     type: "info",
     info: [
       {
-        image: terraNoticiaImage,
+        image: terraNoticiaImage, // pesquisa menopausa
         title:
-          "Você não precisa fazer dietas difíceis, comer pizza também pode emagrecer!",
+          "A menopausa geralmente leva ao ganho de peso",
         description1:
-          "De acordo com o portal Terra, o pilates na parede com pouco tempo de treinos, você já consegue grandes resultados.",
-        description2:
-          "Com apenas 10 minutos ao dia, você mantém uma dieta livre para comer o que quiser e ainda consegue emagrecer.",
+          "Estudos revelam que 90% das mulheres na menopausa ganham peso ou têm mais dificuldade para perder peso em comparação com os anos da pré-menopausa*",
       },
     ],
   },
   {
-    order: 12,
-    question: "Como você descreveria sua realidade?",
-    type: "classic",
+    order: 10,
+    type: "info",
+    info: [
+      {
+        image: terraNoticiaImage, // pesquisa menopausa
+        title:
+          "Mas a boa noticia é que existe uma solucao",
+        description1:
+        "Estudos mostram que o jejum intermitente adaptado para sua rotina pode te fazer perder peso",
+        description2:
+        "E diferente dos demais, voce nao precisa passar fome, nem parar de comer sua pizza preferida. Pois é totalmente flexivel e possível!"
+      },
+    ],
+  },
+  {
+    order: 11,
+    question: "Voce sentiu algum sintoma da menopausa?",
+    type: "multiChoice",
     options: [
-      { image: sorrisoPreocupadoEmoji, text: Biotype.Ectomorph },
-      { image: tedioEmoji, text: Biotype.Mesomorph },
-      { image: envergonhadoEmoji, text: Biotype.Endomorph },
+      { image: sorrisoPreocupadoEmoji, text: "Ondas de calor" },
+      { image: sorrisoPreocupadoEmoji, text: "Suor noturno" },
+      { image: sorrisoPreocupadoEmoji, text: "Alteracoes de humor" },
+      { image: sorrisoPreocupadoEmoji, text: "Ganho de peso" },
+      { image: sorrisoPreocupadoEmoji, text: "Insonia" },
+      { image: sorrisoPreocupadoEmoji, text: "Cansaco" },
+      { image: sorrisoPreocupadoEmoji, text: "Dores articulares" },
+    ],
+  },
+  {
+    order: 12,
+    type: "info",
+    info: [
+      {
+        image: terraNoticiaImage, // pesquisa menopausa
+        title:
+          "Está tudo bem, é normal!",
+        description1:
+        "85% das mulheres experimentam algum tipo de sintoma da menopausa...",
+        description2:
+        "O jejum intermitente consegue atuar na solucao desses problemas! Pois além de benefícios de peso, também vai realizar com que seu corpo renove suas células velhas e traga novas células cheias de energia."
+      },
     ],
   },
   {
     order: 13,
-    question: "Como você descreveria seu nível de metabolismo?",
-    name: "metabolism",
-    save: true,
-    type: "classic",
+    question: "Como voce descreveria as suas emocoes durante a menopausa?",
+    type: "multiChoice",
     options: [
-      { image: fogueteEmoji, text: Metabolism.Fast },
-      { image: sorrisoPreocupadoEmoji, text: Metabolism.Average },
-      { image: cansado2Emoji, text: Metabolism.Slow },
+      { image: fireEmoji, text: "Flutuacao de humor e desafios emocionais" },
+      { image: fireEmoji, text: "Ansiedade e estresse" },
+      { image: fireEmoji, text: "Irritabilidade e raiva" },
+      { image: fireEmoji, text: "Sentimentos de tristeza ou depressao" },
+      { image: fireEmoji, text: "Bem-estar emocional razoavel" },
     ],
   },
   {
     order: 14,
-    question: "Você se movimenta bastante durante seu dia?",
-    name: "lifestyle",
-    save: true,
-    type: "classic",
-    options: [
-      { image: fireEmoji, text: Lifestyle.Active },
-      { image: hangLoseEmoji, text: Lifestyle.Normal },
-      { image: strongEmoji, text: Lifestyle.Sedentary },
+    type: "info",
+    info: [
+      {
+        image: terraNoticiaImage, // pesquisa menopausa
+        title:
+          "Mudanças nos seus hormônios afetam a sua saúde mental",
+        description1:
+        "O Penn Ovarian Aging Study observou um aumento de quatro vezes na depressão entre mulheres durante a transição para a menopausa. O jejum intermitente pode ajudar nas alterações de humor durante a menopausa, promovendo o equilíbrio hormonal e reduzindo os níveis de inflamação no corpo.",
+      },
     ],
   },
   {
     order: 15,
-    question: "Você se alimenta de maneira saudável?",
-    name: "fitnessLevel",
-    save: true,
-    type: "classic",
-    options: [
-      { image: pizzaEmoji, text: FitnessLevel.Bad },
-      { image: appleEmoji, text: FitnessLevel.Normal },
-      { image: saladaEmoji, text: FitnessLevel.Good },
+    type: "info",
+    info: [
+      {
+        image: terraNoticiaImage, // pesquisa menopausa
+        title:
+          "O seu perfil é perfeito para o nosso programa de emagrecimento!",
+        description1:
+        "FastEasy foi criado pensando em você. Então, vamos começar e aprender mais sobre você, para que possamos fazer o seu plano.",
+      },
     ],
   },
   {
     order: 16,
+    question: "A que horas você costuma tomar café da manhã?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Antes das 7h da manhã" },
+      { image: pizzaEmoji, text: "Após as 7h da manhã" },
+      { image: pizzaEmoji, text: "Entre as 9h e as 11h" },
+      { image: pizzaEmoji, text: "Geralmente, eu pulo o café" },
+    ],
+  },
+  {
+    order: 17,
+    question: "E você almoça?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Antes das 13h" },
+      { image: pizzaEmoji, text: "Entre as 13h e as 14h" },
+      { image: pizzaEmoji, text: "Entre as 14h e as 16h" },
+      { image: pizzaEmoji, text: "Geralmente, eu não almoco" },
+    ],
+  },
+  {
+    order: 18,
+    question: "E a que horas você janta?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Antes das 16h" },
+      { image: pizzaEmoji, text: "Entre as 16h e as 19h" },
+      { image: pizzaEmoji, text: "Após as 19h" },
+      { image: pizzaEmoji, text: "Geralmente, eu não janto" },
+    ],
+  },
+  {
+    order: 19,
+    question: "Você prefere cozinhar em casa ou comer fora?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Geralmente eu cozinho em casa" },
+      { image: pizzaEmoji, text: "Geralmente, eu como fora" },
+      { image: pizzaEmoji, text: "Gosto das duas coisas" },
+    ],
+  },
+  {
+    order: 20,
+    question: "O que você acha de fazer jejum durante todo o fim de semana?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Sem problemas" },
+      { image: pizzaEmoji, text: "Eu consigo, certo!" },
+      { image: pizzaEmoji, text: "Sem chances!" },
+    ],
+  },
+  {
+    order: 21,
+    question: "Qual a sua programacao de treinos?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "3 a 5 vezes por semana" },
+      { image: pizzaEmoji, text: "1 a 2 treinos por semana" },
+      { image: pizzaEmoji, text: "Nao tenho o habito de treinar" },
+    ],
+  },
+  {
+    order: 22,
+    question: "Qual é sua carga de trabalho?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Das 8 as 18h" },
+      { image: pizzaEmoji, text: "Turno da noite" },
+      { image: pizzaEmoji, text: "É bastante flexivel" },
+      { image: pizzaEmoji, text: "Nao trabalho mais" },
+    ],
+  },
+  {
+    order: 23,
+    question: "Qual é o seu nível de atividade no trabalho?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Bastante inativa" },
+      { image: pizzaEmoji, text: "Trabalho Físico / muito ativo" },
+      { image: pizzaEmoji, text: "Um pouco dos dois" },
+    ],
+  },
+  {
+    order: 24,
+    question: "Você fica sem fôlego após subir um lance de escadas?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Fico sem folego e nao consigo falar" },
+      { image: pizzaEmoji, text: "Fico um pouco sem ar, mas consigo falar" },
+      { image: pizzaEmoji, text: "Me sinto ok após uma subida" },
+      { image: pizzaEmoji, text: "Eu poderia subir varios lances tranquilamente" },
+    ],
+  },
+  {
+    order: 25,
+    question: "Por quanto tempo voce costuma caminhar um dia comum?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Menos de 20 minutos" },
+      { image: pizzaEmoji, text: "De 20 a 60 minutos" },
+      { image: pizzaEmoji, text: "Mais de 60 minutos" },
+    ],
+  },
+  {
+    order: 26,
+    question: "Quanta água voce bebe diariamente?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Nada. Eu bebo café e chá" },
+      { image: pizzaEmoji, text: "Cerca de 2 copos (500ml)" },
+      { image: pizzaEmoji, text: "De 2 a 6 copos (0,5 - 1,5l)" },
+      { image: pizzaEmoji, text: "Muita. Provavelmente mais do que 6 copos." },
+    ],
+  },
+  {
+    order: 27,
+    question: "Quanta água voce bebe diariamente?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Pouco descanso (menos de 5 horas)" },
+      { image: pizzaEmoji, text: "Durmo um pouco (5-6 horas)" },
+      { image: pizzaEmoji, text: "Um bom descanso (7-8 horas)" },
+      { image: pizzaEmoji, text: "Sou especialista em dormir (mais de 8 horas)" },
+    ],
+  },
+  {
+    order: 28,
+    question: "Voce faz uso de algum remédio?",
+    type: "multiChoice",
+    options: [
+      { image: pizzaEmoji, text: "Vitaminas" },
+      { image: pizzaEmoji, text: "Hormonios" },
+      { image: pizzaEmoji, text: "Antibioticos" },
+      { image: pizzaEmoji, text: "Nenhum dos mencionados" },
+    ],
+  },
+  {
+    order: 29,
+    question: "Voce tem algum problema sério nas costas?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Sim" },
+      { image: pizzaEmoji, text: "Nao" },
+    ],
+  },
+  {
+    order: 30,
+    question: "Maus hábitos",
+    type: "multiChoice",
+    options: [
+      { image: pizzaEmoji, text: "Nao descanso o suficiente" },
+      { image: pizzaEmoji, text: "Gosto de chocolates e doces" },
+      { image: pizzaEmoji, text: "Refri é o meu melhor amigo" },
+      { image: pizzaEmoji, text: "Eu como muita comida salgada" },
+      { image: pizzaEmoji, text: "Gosto de beliscar a noite" },
+      { image: pizzaEmoji, text: "Nenhum dos mencionados" },
+    ],
+  },
+  {
+    order: 31,
+    question: "Escolha acontecimentos da vida que levaram ao ganho de peso",
+    type: "multiChoice",
+    options: [
+      { image: pizzaEmoji, text: "Casamento ou relacionamento" },
+      { image: pizzaEmoji, text: "Gravidez" },
+      { image: pizzaEmoji, text: "Trabalho ou vida familiar" },
+      { image: pizzaEmoji, text: "Estresse ou saúde mental" },
+      { image: pizzaEmoji, text: "Remédio ou distúrbio mental" },
+      { image: pizzaEmoji, text: "Nenhum dos mencionados" },
+    ],
+  },
+	{
+    order: 32,
+    question: "O que você sabe sobre o jejum intermitente?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Só de nome" },
+      { image: pizzaEmoji, text: "Algumas coisas" },
+      { image: pizzaEmoji, text: "Tenho experiencia em jejum" },
+    ],
+  },
+	{
+    order: 33,
+    question: "Qual é a sua animação para perder uns quilinhos a mais?",
+    type: "classic",
+    options: [
+      { image: pizzaEmoji, text: "Eu só quero saber mais sobre jejum" },
+      { image: pizzaEmoji, text: "Quero tentar perder um pouco de peso" },
+      { image: pizzaEmoji, text: "Quero de verdade perder o máximo de peso possível" },
+    ],
+  },
+
+  {
+    order: 34,
     type: "calculation",
     calculation: {
       title: "Qual sua altura?",
@@ -221,7 +422,7 @@ export const questionOptions: Question[] = [
     },
   },
   {
-    order: 17,
+    order: 35,
     type: "calculation",
     calculation: {
       title: "Qual seu peso?",
@@ -231,7 +432,7 @@ export const questionOptions: Question[] = [
     },
   },
   {
-    order: 18,
+    order: 36,
     type: "calculation",
     calculation: {
       title: "Qual sua meta de peso?",
@@ -241,71 +442,42 @@ export const questionOptions: Question[] = [
     },
   },
   {
-    order: 19,
-    type: "calculation",
-    calculation: { title: "Qual seu nome?" },
-  },
-  {
-    order: 20,
+		order: 37,
     type: "results-analysis",
   },
+	{
+		order: 38,
+		type: "calculation",
+		calculation: { title: "Qual seu nome?" },
+	},
   {
-    order: 21,
-    question: "Como você se sentiria ao atingir seu peso ideal?",
+    order: 39,
+    question: "Há alguma ocasiao especial que voce deseja perder peso?",
     type: "classic",
     options: [
-      { image: sorrisoEmoji, text: "Extremamente feliz e confiante" },
-      { image: escaladaEmoji, text: "Mais saudável e ativa" },
-      { image: strongEmoji, text: "Satisfeita e motivada" },
-      { image: appleEmoji, text: "Um pouco melhor do que agora" },
+      { image: sorrisoEmoji, text: "Férias" },
+      { image: escaladaEmoji, text: "Casamento" },
+      { image: strongEmoji, text: "Evento esportivo" },
+      { image: appleEmoji, text: "Ida a praia" },
+      { image: appleEmoji, text: "Encontro" },
+      { image: appleEmoji, text: "Reuniao da familia" },
+      { image: appleEmoji, text: "Outro" },
     ],
   },
   {
-    order: 22,
-    question:
-      "Quais atividades você gostaria de fazer mais facilmente com seu peso ideal?",
-    type: "classic",
-    options: [
-      { image: fireEmoji, text: "Esportes" },
-      { image: hangLoseEmoji, text: "Caminhadas longas" },
-      { image: strongEmoji, text: "Brincar com os filhos" },
-    ],
-  },
-  {
-    order: 23,
-    question:
-      "Como você imagina que seu estilo de vida mudaria com seu novo peso?",
-    type: "classic",
-    options: [
-      { image: fireEmoji, text: "Muito mais ativa e saudável" },
-      { image: hangLoseEmoji, text: "Mais equilibrado e consciente" },
-      { image: strongEmoji, text: "Mais confiante e social" },
-    ],
-  },
-  {
-    order: 24,
-    question: "Quais benefícios você espera obter ao alcançar seu peso ideal?",
-    type: "classic",
-    options: [
-      { image: fireEmoji, text: "Melhorar a autoestima" },
-      { image: hangLoseEmoji, text: "Reduzir riscos de saúde" },
-      { image: strongEmoji, text: "Aumentar a energia" },
-      { image: appleEmoji, text: "Melhorar a qualidade de vida" },
-    ],
-  },
-  {
-    order: 25,
+		order: 40,
     type: "results-chart-promises",
   },
   {
-    order: 26,
+		order: 41,
     type: "awaiting",
   },
   {
-    order: 27,
+		order: 42,
     question: "Seu plano personalizado em 1 minuto",
     type: "landingPage",
-  },
+  }
 ];
 
 export default questionOptions;
+
